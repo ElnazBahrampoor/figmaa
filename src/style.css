@@ -1,9 +1,27 @@
 @import "tailwindcss";
+@font-face {
+  font-family: Estsdad;
+  font-style: normal;
+  font-weight: 200 700;
+  font-display: swap;
+  src: url("/fonts/webfonts/variable/Estedad[KSHD\,wght].woff2") format("woff2");
+}
+
 @theme {
   --color-secondary-text: #fdb713;
+  --font-Estedad: "Estsdad";
+  --animate-loop: loop 15s linear infinite;
+  @keyframes loop {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(+50%);
+    }
+  }
 }
 @layer components {
   .bg-hero {
-    @apply bg-[url(../public/imags/heroPic.jpg)] bg-no-repeat bg-center bg-cover;
+    @apply bg-no-repeat bg-center bg-cover;
   }
 }

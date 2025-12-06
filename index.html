@@ -1,79 +1,1195 @@
 <!DOCTYPE html>
 <html lang="en" dir="rtl">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      rel="stylesheet"
-      href="./node_modules/flowbite/dist/flowbite.min.css"
-    />
-    <link rel="stylesheet" href="./node_modules/swiper/swiper-bundle.min.css" />
-    <link rel="stylesheet" href="./src/style.css " />
-    <link rel="shortcut icon" href="./logo/default.svg" type="image/x-icon" />
-    <title>Document</title>
-  </head>
-  <body class="h-1000">
-    <div
-      class="w-full h-100 bg-hero flex justify-center items-center flex-col gap-y-3"
-    >
-      <header
-        class="w-306 h-24 bg-amber-300 mx-auto rounded-bl-2xl rounded-br-2xl fixed top-0 inset-x-0"
-      >
-        <div class="logo"></div>
-        <nav class="navbar"></nav>
-        <div class="btn">
-          <button></button>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="https://cdn.jsdelivr.net/npm/flowbite@4.0.1/dist/flowbite.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css" />
+  <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+  <link rel="stylesheet" href="./src/style.css " />
+  <link rel="shortcut icon" href="./logo/default.svg" type="image/x-icon" />
+  <title>AutoRent.com</title>
+</head>
+
+<body class="h-1000 bg-[#F3F3F3]">
+
+  <!-- heaer start -->
+  <header class="overflow-hidden">
+    <!-- div coly -->
+    <div x-data="{ open: false }" class="w-full h-171 bg-hero bg-[url(/imags/heroBaner.png)] relative ">
+      <div class="w-full h-171 bg-[#000000B8]/75"></div>
+      <!-- hero baner -->
+      <div
+        class="w-96 md:w-full lg:w-306 lg:h-24 bg-white fixed top-0 left-0 rounded-bl-2xl lg:left-15 rounded-br-2xl flex justify-between items-center pl-8 pr-8 z-250">
+        <!-- logo img -->
+        <div class="w-38 h-15">
+          <img src="/imags/logoBaner.svg" alt="" class="w-full h-full" />
         </div>
-      </header>
-      <h1 class="text-3xl font-bold text-secondary-text">اجاره خودرو</h1>
-      <!-- brec start -->
+        <!-- logo img end -->
+        <!-- navbar  -->
+        <nav class="w-126.75 h-7 hidden md:flex items-center justify-around">
+          <a href="#" class="font-Estedad text-[#353535] font-medium text-base hover:text-gray-500">رزرو خودرو</a>
+          <a href="#" class="font-Estedad text-[#353535] font-medium text-base hover:text-gray-500">خدمات ما</a>
+          <a href="#" class="font-Estedad text-[#353535] font-medium text-base hover:text-gray-500">بلاگ</a>
+          <a href="#" class="font-Estedad text-[#353535] font-medium text-base hover:text-gray-500">درباره ما</a>
+          <a href="#" class="font-Estedad text-[#353535] font-medium text-base hover:text-gray-500">تماس با ما</a>
+          <a href="#"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+              stroke="currentColor" class="size-6 hover:text-gray-500">
+              <path stroke-linecap="round" stroke-linejoin="round"
+                d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z" />
+            </svg>
+          </a>
+        </nav>
 
-      <nav class="flex" aria-label="Breadcrumb">
-        <ol
-          class="inline-flex items-center space-x-1 md:space-x-2 rtl:space-x-reverse"
-        >
-          <li class="inline-flex items-center">
-            <a
-              href="#"
-              class="inline-flex items-center text-sm text-white font-medium text-body hover:text-amber-200"
-            >
-              اتورنت
-            </a>
-          </li>
-          <li>
-            <div class="flex items-center space-x-1.5">
-              <svg
-                class="w-3.5 h-3.5 rtl:rotate-180 text-body text-[#D7D7D7] hover:text-amber-200"
-                aria-hidden="true"
-                xmlns="http://www.w3.org/2000/svg"
-                width="24"
-                height="24"
-                fill="none"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  stroke="currentColor"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="m9 5 7 7-7 7"
-                />
+        <!-- navbar end -->
+        <!-- btn -->
+        <div class="hidden md:block" x-data="{ oprn: false}">
+          <button type="button"
+            class="w-30.5 h-10 bg-[#194BF0] pt-1 pb-1 pr-4 pl-4 rounded-lg text-white text-base font-Estedad">
+            ورود / ثبت‌نام
+          </button>
+        </div>
+        <!-- hambergur menu strt -->
+        <div class="block md:hidden">
+          <button @click="open = ! open">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+              stroke="currentColor" class="size-6">
+              <path stroke-linecap="round" stroke-linejoin="round"
+                d="M3.75 5.25h16.5m-16.5 4.5h16.5m-16.5 4.5h16.5m-16.5 4.5h16.5" />
+            </svg>
+          </button>
+        </div>
+        <br /><br /><br /><br />
+
+        <!-- end btn -->
+        <!-- mobile navigation -->
+        <div x-show="open" class="bg-white border-t border-gray-100 py-4 px-3 absolute top-24 right-1 w-93 md:hidden">
+          <a href="#" class="font-Estedad text-[#353535] font-medium text-base hover:text-gray-500 block">رزرو خودرو</a>
+          <a href="#" class="font-Estedad text-[#353535] font-medium text-base hover:text-gray-500 block">خدمات ما</a>
+
+          <a href="#" class="font-Estedad text-[#353535] font-medium text-base hover:text-gray-500 block">بلاگ</a>
+          <a href="#" class="font-Estedad text-[#353535] font-medium text-base hover:text-gray-500 block">درباره ما</a>
+          <a href="#" class="font-Estedad text-[#353535] font-medium text-base hover:text-gray-500 block">تماس با ما</a>
+          <a href="#"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+              stroke="currentColor" class="size-6 hover:text-gray-500 block">
+              <path stroke-linecap="round" stroke-linejoin="round"
+                d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z" />
+            </svg>
+          </a>
+          <button type="button"
+            class="w-full h-10 bg-[#194BF0] pt-1 pb-1 pr-4 pl-4 rounded-lg text-white text-base font-Estedad">
+            ورود / ثبت‌نام
+          </button>
+        </div>
+      </div>
+
+      <!-- hero maner end -->
+      <!-- desc start -->
+
+      <div class="w-360 h-144.75 absolute top-24 lg:right-18 p-2">
+        <div class="w-300 h-120 relative">
+          <div class="w-83.75 h-31 flex items-center absolute top-20 lg:right-20">
+            <h1 class="font-Estedad font-bold text-4xl text-secondary-text">
+              اُتـــو رِنت؛ سریع،<br />
+              آسان و به صرفه
+            </h1>
+          </div>
+          <div class="w-120 h-9 absolute top-55 lg:right-8">
+            <p class="font-Estedad text-[#F9F9F9] lg:text-xl font-normal">
+              سرویس دهنده رزرو خودرو در ایران در کمترین زمان ممکن!
+            </p>
+          </div>
+          <div class="w-200 h-15 absolute top-70 lg:right-8 flex gap-2">
+            <button type="button"
+              class="w-46.5 h-12 bg-[#FDB713] rounded-lg pt-0.5 pb-0.5 pr-6 pl-6 flex justify-center items-center gap-1 font-Estedad">
+              <img src="/imags/buttnCar.svg" alt="" />
+              رزرو آسان خودرو
+            </button>
+            <button type="button"
+              class="w-37.75 h-12 pt-2 pb-2 pr-6 pl-6 border border-white rounded-lg flex justify-center items-center font-Estedad text-white text-base gap-1">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                stroke="currentColor" class="size-6 text-white">
+                <path stroke-linecap="round" stroke-linejoin="round"
+                  d="m11.25 9-3 3m0 0 3 3m-3-3h7.5M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
               </svg>
-              <a
-                href="#"
-                class="inline-flex items-center text-sm text-white font-medium text-body hover:text-amber-200"
-                >لیست خودروهای اجاره ای</a
-              >
-            </div>
-          </li>
-        </ol>
-      </nav>
+              تماس با ما
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+  <div class="w-full h-120 md:h-22"></div>
+  <!-- header end -->
 
-      <!-- brac end  -->
+  <section>
+    <div
+      class="w-93 md:w-200 lg:w-305.75 h-130 md:h-50.25 bg-white rounded-2xl absolute top-144.5 left-1.5 lg:left-12  border border-[#D7D7D7] p-6 md:space-y-1.5">
+      <!-- top start -->
+      <div class="w-full lg:w-293.75 h-50 md:h-10 md:flex md:justify-between md:items-center space-y-1">
+        <div class="w-full md:w-107.5 h-40 md:h-10 md:flex md:gap-2 space-y-3 md:space-y-0">
+          <button type="button"
+            class="w-full md:w-33.75 h-10 bg-[#194BF0] rounded-2xl pl-3 pr-3 border border-[#D7D7D7] font-Estedad text-xs font-semibold text-white flex justify-center items-center">
+            اجاره خودرو با راننده
+          </button>
+          <button type="button"
+            class="w-full md:w-33.75 h-10 bg-white rounded-2xl pl-3 pr-3 border border-[#D7D7D7] font-Estedad text-xs font-semibold text-black flex justify-center items-center">
+            اجاره خودرو بی راننده
+          </button>
+          <button type="button"
+            class="w-full md:w-33.75 h-10 bg-white rounded-2xl pl-3 pr-3 border border-[#D7D7D7] font-Estedad text-xs font-semibold text-black flex justify-center items-center">
+            اجاره ماشین عروس
+          </button>
+        </div>
+        <div class="w-full text-center md:text-right md:w-46.25 h-6.25 text-xs text-[#194BF0] font-Estedad font-medium">
+          اطلاعات بیشتر در مورد رزرو خودرو
+        </div>
+      </div>
+      <!-- top end -->
+
+      <!-- center strt -->
+      <div
+        class="w-full md:w-274 h-30 md:h-6.25 md:flex lg:flex lg:items-center lg:justify-between border border-gray-300 rounded-b-lg md:border-none">
+        <div
+          class="w-full md:w-30.25 h-6.25 flex items-center justify-center gap-1 font-Estedad text-xs text-[#0C0C0C]">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+            stroke="currentColor" class="size-3">
+            <path stroke-linecap="round" stroke-linejoin="round"
+              d="m11.25 9-3 3m0 0 3 3m-3-3h7.5M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+          </svg>
+          <span class="font-Estedad font-normal">محل تحویل خودرو</span>
+        </div>
+        <div class="w-full md:w-100 h-6.25 flex flex-wrap md:flex-nowrap md:gap-1">
+          <div class="w-full md:w-21.5 h-6.25 flex justify-center items-center gap-1">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+              stroke="currentColor" class="size-3">
+              <path stroke-linecap="round" stroke-linejoin="round"
+                d="m11.25 9-3 3m0 0 3 3m-3-3h7.5M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+            </svg>
+            <span class="font-Estedad text-xs font-normal">تاریخ تحویل</span>
+          </div>
+          <div class="w-full md:w-21.5 h-6.25 flex justify-center items-center gap-1">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+              stroke="currentColor" class="size-3">
+              <path stroke-linecap="round" stroke-linejoin="round"
+                d="m11.25 9-3 3m0 0 3 3m-3-3h7.5M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+            </svg>
+            <span class="font-Estedad text-xs font-normal">ساعت تحویل</span>
+          </div>
+          <div class="w-full md:w-21.5 h-6.25 flex justify-center items-center gap-1">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+              stroke="currentColor" class="size-3">
+              <path stroke-linecap="round" stroke-linejoin="round"
+                d="m11.25 9-3 3m0 0 3 3m-3-3h7.5M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+            </svg>
+            <span class="font-Estedad text-xs font-normal">تاریخ بازگشت</span>
+          </div>
+          <div class="w-full md:w-21.5 h-6.25 flex justify-center items-center">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+              stroke="currentColor" class="size-3">
+              <path stroke-linecap="round" stroke-linejoin="round"
+                d="m11.25 9-3 3m0 0 3 3m-3-3h7.5M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+            </svg>
+            <span class="font-Estedad text-xs font-normal">ساعت بازگشت</span>
+          </div>
+        </div>
+      </div>
+      <!-- center end -->
+      <!-- buten strt -->
+      <div
+        class="w-full md:w-293.75 h-35 md:h-14 mt-2 lg:flex lg:justify-between lg:items-center border border-[#F3F3F3] rounded-lg space-y-2 md:space-y-0">
+        <div class="w-full md:w-131.75 h-7.25">
+          <form action="" class="">
+            <select name="airplan" id="airplan" class="w-131.75 h-8 border-none text-xs font-Estedad">
+              <option value="air" class="">تهران-فرودگاه امام خمینی</option>
+            </select>
+          </form>
+        </div>
+        <div class="w-full md:w-130 h-8 flex flex-wrap md:flex-nowrap md:justify-between md:items-center">
+          <div class="w-[50%] md:w-27.75 h-7.75 flex justify-center items-center gap-1 border-r-2 border-[#D7D7D7]">
+            <span class="font-Estedad text-sm font-medium">۱۴۰۳/۰۲/۱۰</span>
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+              stroke="currentColor" class="size-3.5">
+              <path stroke-linecap="round" stroke-linejoin="round"
+                d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 0 1 2.25-2.25h13.5A2.25 2.25 0 0 1 21 7.5v11.25m-18 0A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75m-18 0v-7.5A2.25 2.25 0 0 1 5.25 9h13.5A2.25 2.25 0 0 1 21 11.25v7.5m-9-6h.008v.008H12v-.008ZM12 15h.008v.008H12V15Zm0 2.25h.008v.008H12v-.008ZM9.75 15h.008v.008H9.75V15Zm0 2.25h.008v.008H9.75v-.008ZM7.5 15h.008v.008H7.5V15Zm0 2.25h.008v.008H7.5v-.008Zm6.75-4.5h.008v.008h-.008v-.008Zm0 2.25h.008v.008h-.008V15Zm0 2.25h.008v.008h-.008v-.008Zm2.25-4.5h.008v.008H16.5v-.008Zm0 2.25h.008v.008H16.5V15Z" />
+            </svg>
+          </div>
+          <div class="w-[50%] md:w-26.5 h-7.75 flex justify-center items-center gap-4 border-r-2 border-[#D7D7D7]">
+            <span class="font-Estedad text-sm font-medium">۰۷:۰۰</span>
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+              stroke="currentColor" class="size-3.5">
+              <path stroke-linecap="round" stroke-linejoin="round"
+                d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+            </svg>
+          </div>
+          <div class="w-[50%] md:w-27.75 h-7.75 flex justify-center items-center gap-1 border-r-2 border-[#D7D7D7]">
+            <span class="font-Estedad text-sm font-medium">۱۴۰۳/۰۲/۱۰</span>
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+              stroke="currentColor" class="size-3.5">
+              <path stroke-linecap="round" stroke-linejoin="round"
+                d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 0 1 2.25-2.25h13.5A2.25 2.25 0 0 1 21 7.5v11.25m-18 0A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75m-18 0v-7.5A2.25 2.25 0 0 1 5.25 9h13.5A2.25 2.25 0 0 1 21 11.25v7.5m-9-6h.008v.008H12v-.008ZM12 15h.008v.008H12V15Zm0 2.25h.008v.008H12v-.008ZM9.75 15h.008v.008H9.75V15Zm0 2.25h.008v.008H9.75v-.008ZM7.5 15h.008v.008H7.5V15Zm0 2.25h.008v.008H7.5v-.008Zm6.75-4.5h.008v.008h-.008v-.008Zm0 2.25h.008v.008h-.008V15Zm0 2.25h.008v.008h-.008v-.008Zm2.25-4.5h.008v.008H16.5v-.008Zm0 2.25h.008v.008H16.5V15Z" />
+            </svg>
+          </div>
+          <div class="w-[50%] md:w-26.5 h-7.75 flex justify-center items-center gap-4 border-r-2 border-[#D7D7D7]">
+            <span class="font-Estedad text-sm font-medium">۰۷:۰۰</span>
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+              stroke="currentColor" class="size-3.5">
+              <path stroke-linecap="round" stroke-linejoin="round"
+                d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+            </svg>
+          </div>
+          <div class="w-full md:size-12 mt-4 md:mt-0">
+            <div class="md:size-12 bg-[#FDB713] rounded-2xl flex justify-center items-center">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                stroke="currentColor" class="size-6">
+                <path stroke-linecap="round" stroke-linejoin="round"
+                  d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z" />
+              </svg>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- main strt -->
+  <main class="mt-12.5 mb-20">
+    <section class="container h-20 overflow-hidden mb-6">
+      <div class="w-360 h-20 mx-auto flex items-center gap-x-5 animate-loop">
+        <img src="/imags/logos/BMW.png" alt="" class="size-20 object-contain grayscale opacity-75" />
+        <img src="/imags/logos/HONDA.png" alt="" class="w-18.5 h-15 object-contain grayscale opacity-75" />
+        <img src="/imags/logos/HYUNDA.png" alt="" class="w-27.5 h-15 object-contain grayscale opacity-75" />
+        <img src="/imags/logos/JEEP.png" alt="" class="w-25 h-12.5 object-contain grayscale opacity-75" />
+        <img src="/imags/logos/KIA.png" alt="" class="w-25 h-12.5 object-contain grayscale opacity-75" />
+        <img src="/imags/logos/LAND.png" alt="" class="w-25 h-12.5 object-contain grayscale opacity-75" />
+        <img src="/imags/logos/LEXUS.png" alt="" class="w-23.5 h-17.5 object-contain grayscale opacity-75" />
+        <img src="/imags/logos/MERCEDES.png" alt="" class="size-20 object-contain grayscales opacity-75" />
+        <img src="/imags/logos/NISSAN.png" alt="" class="w-17.5 h-15 object-contain grayscales opacity-75" />
+        <img src="/imags/logos/TOYOTA.png" alt="" class="w-21.75 h-15 object-contain grayscales opacity-75" />
+        <img src="/imags/logos/BMW.png" alt="" class="size-20 object-contain grayscale opacity-75" />
+        <img src="/imags/logos/HONDA.png" alt="" class="w-18.5 h-15 object-contain grayscale opacity-75" />
+        <img src="/imags/logos/HYUNDA.png" alt="" class="w-27.5 h-15 object-contain grayscale opacity-75" />
+        <img src="/imags/logos/JEEP.png" alt="" class="w-25 h-12.5 object-contain grayscale opacity-75" />
+        <img src="/imags/logos/LAND.png" alt="" class="w-25 h-12.5 object-contain grayscale opacity-75" />
+        <img src="/imags/logos/LEXUS.png" alt="" class="w-23.5 h-17.5 object-contain grayscale opacity-75" />
+        <img src="/imags/logos/MERCEDES.png" alt="" class="size-20 object-contain grayscales opacity-75" />
+        <img src="/imags/logos/NISSAN.png" alt="" class="w-17.5 h-15 object-contain grayscales opacity-75" />
+        <img src="/imags/logos/HYUNDA.png" alt="" class="w-27.5 h-15 object-contain grayscale opacity-75" />
+        <img src="/imags/logos/JEEP.png" alt="" class="w-25 h-12.5 object-contain grayscale opacity-75" />
+        <img src="/imags/logos/LAND.png" alt="" class="w-25 h-12.5 object-contain grayscale opacity-75" />
+        <img src="/imags/logos/LEXUS.png" alt="" class="w-23.5 h-17.5 object-contain grayscale opacity-75" />
+      </div>
+    </section>
+
+    <section class="relative">
+      <div
+        class="w-93 md:w-306 flex justify-center items-center h-73 mx-auto rounded-2xl bg-hero bg-[url(/imags/heroBaner1.png)]">
+        <div class="w-93 md:w-211.25 h-36.75 z-40">
+          <div class="w-93 md:w-211.25 h-10 font-Estedad text-2xl font-bold text-secondary-text text-center">
+            <h2>چــــــرا اُتو رِنت؟</h2>
+          </div>
+          <div class="w-93 md:w-211.25 h-24">
+            <p class="text-xs md:text-lg font-normal text-white">
+              اجاره خودرو از یک شرکت اجاره خودرو با سابقه به شما کمک می‌کند تا
+              در مسافرت ها، قرار ملاقات‌ های مهم، مجالس و مراسم‌های خانوادگی
+              ماشین مناسب خود را در اختیار داشته باشید. اگر شما اصلا خودرویی
+              در اختیار ندارید یا خودروی شما مطمئن نیست، می‌توانید از سوییچ،
+              خودروی مناسب خود را کرایه کرده و با آسودگی به سفر بروید.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div
+        class="w-93 md:w-300 md:h-50 h-150  flex flex-col items-center gap-2.5 md:absolute md:top-52 md:left-18.5 md:flex md:flex-row md:justify-around md:items-center">
+        <div class="w-78 h-46.5 bg-white rounded-2xl pt-4 pb-4 pr-6 pl-6 border border-[#D7D7D7]">
+          <div class="w-66 h-38.5 flex flex-col gap-y-2 items-center">
+            <div class="size-18 rounded-xl flex justify-center items-center p-3 border border-[#08237D]">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                stroke="currentColor" class="size-6 text-[#08237d]">
+                <path stroke-linecap="round" stroke-linejoin="round"
+                  d="M2.25 13.5h3.86a2.25 2.25 0 0 1 2.012 1.244l.256.512a2.25 2.25 0 0 0 2.013 1.244h3.218a2.25 2.25 0 0 0 2.013-1.244l.256-.512a2.25 2.25 0 0 1 2.013-1.244h3.859m-19.5.338V18a2.25 2.25 0 0 0 2.25 2.25h15A2.25 2.25 0 0 0 21.75 18v-4.162c0-.224-.034-.447-.1-.661L19.24 5.338a2.25 2.25 0 0 0-2.15-1.588H6.911a2.25 2.25 0 0 0-2.15 1.588L2.35 13.177a2.25 2.25 0 0 0-.1.661Z" />
+              </svg>
+            </div>
+            <div class="w-25 h-5.5 font-Estedad text-base font-bold text-[#414141]">
+              تحویل در محل
+            </div>
+            <div class="w-66 h-11 font-Estedad text-xs text-[#757575] font-normal">
+              تحویل خودرو در زمان و مکان تعیین شده توسط شما خواهد بود.
+            </div>
+          </div>
+        </div>
+        <div class="w-78 h-46.5 bg-white rounded-2xl pt-4 pb-4 pr-6 pl-6 border border-[#D7D7D7]">
+          <div class="w-66 h-38.5 flex flex-col gap-y-2 items-center">
+            <div class="size-18 rounded-xl flex justify-center items-center p-3 border border-[#08237D]">
+              <img src="/imags/24-support.svg" alt="" />
+            </div>
+            <div class="w-30 h-7 font-Estedad text-sm font-bold text-[#414141]">
+              پشتیبانی 24 ساعته
+            </div>
+            <div class="w-66 h-11 font-Estedad text-xs text-[#757575] font-normal">
+              کارشناسان ما در هر زمان و مکان، پاسخگوی سوالات شما خواهند بود.
+            </div>
+          </div>
+        </div>
+        <div class="w-78 h-46.5 bg-white rounded-2xl pt-4 pb-4 pr-6 pl-6 border border-[#D7D7D7]">
+          <div class="w-66 h-38.5 flex flex-col gap-y-2 items-center">
+            <div class="size-18 rounded-xl flex justify-center items-center p-3 border border-[#08237D]">
+              <img src="/imags/wallet-minus.svg" alt="" class="w-10 h-10 object-contain" />
+            </div>
+            <div class="w-25 h-5.5 font-Estedad text-base font-bold text-[#414141]">
+              قیمت مناسب
+            </div>
+            <div class="w-66 h-11 font-Estedad text-xs text-[#757575] font-normal">
+              هدف ما، ارائه بهترین خدمات با مناسب ترین قیمت ممکن است.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <div class="w-full h-20 md:h-50"></div>
+    <section class="flex justify-center items-center">
+      <div
+        class="w-93 h-200 flex-col items-center gap-2 md:w-306 md:h-36 flex md:flex-row md:justify-between md:items-center">
+        <div class="w-59.75 h-36 rounded-2xl flex flex-col items-center border border-[#D7D7D7] bg-white">
+          <div class="size-40 text-center">
+            <span class="font-Estedad font-medium text-lg">کوپه</span>
+          </div>
+          <div class="w-58 h-27">
+            <img src="/imags/koope.png" alt="" class="object-contain" />
+          </div>
+          <div class="w-52 h-4.75 rounded-lg bg-[#FDB713]"></div>
+        </div>
+        <div class="w-59.75 h-36 rounded-2xl flex flex-col items-center border border-[#D7D7D7] bg-white">
+          <div class="size-40 text-center">
+            <span class="font-Estedad font-medium text-lg">سدان</span>
+          </div>
+          <div class="w-58 h-27">
+            <img src="/imags/sedan.png" alt="" class="object-contain" />
+          </div>
+          <div class="w-52 h-4.75 rounded-lg bg-[#FDB713]"></div>
+        </div>
+        <div class="w-59.75 h-36 rounded-2xl flex flex-col items-center border border-[#D7D7D7] bg-white">
+          <div class="size-40 text-center">
+            <span class="font-Estedad font-medium text-lg">کروک</span>
+          </div>
+          <div class="w-58 h-27">
+            <img src="/imags/krok.png" alt="" class="object-contain" />
+          </div>
+          <div class="w-52 h-4.75 rounded-lg bg-[#FDB713]"></div>
+        </div>
+        <div class="w-59.75 h-36 rounded-2xl flex flex-col items-center border border-[#D7D7D7] bg-white">
+          <div class="size-40 text-center">
+            <span class="font-Estedad font-medium text-lg">شاسی بلند</span>
+          </div>
+          <div class="w-58 h-27">
+            <img src="/imags/boland.png" alt="" class="object-contain" />
+          </div>
+          <div class="w-52 h-4.75 rounded-lg bg-[#FDB713]"></div>
+        </div>
+        <div class="w-59.75 h-36 rounded-2xl flex flex-col items-center border border-[#D7D7D7] bg-white">
+          <div class="size-40 text-center">
+            <span class="font-Estedad font-medium text-lg">اسپرت</span>
+          </div>
+          <div class="w-58 h-27">
+            <img src="/imags/boland.png" alt="" class="object-contain" />
+          </div>
+          <div class="w-52 h-4.75 rounded-lg bg-[#FDB713]"></div>
+        </div>
+      </div>
+    </section>
+    <section class="mt-12 flex justify-center items-center">
+      <div class="w-93 md:w-211.25 h-27.25 space-y-2 text-center">
+        <h3 class="font-Estedad text-2xl font-extralight text-[#5E5E5E]">
+          مشاهده موجودی خودروها
+        </h3>
+        <p class="font-Estedad font-extrabold text-3xl">
+          رزرو خودرو در <span class="text-[#D79C10]"> اُتـــورِنت</span>
+        </p>
+      </div>
+    </section>
+    <section class="flex mb-6">
+      <div class="w-0 md:w-155 h-27.25"></div>
+      <div
+        class="w-92 md:w-211.25 h-27.25 flex flex-col items-center gap-2 md:flex-row md:justify-between md:items-center">
+        <div class="w-100 h-12">
+          <button type="button"
+            class="w-32 h-12 bg-[#194BF0] pt-1 pb-1 pr-2 pl-2 rounded-lg font-Estedad text-sm font-medium text-white">
+            پرطرفدار
+          </button>
+          <button type="button"
+            class="w-32 h-12 border border-[#194BF0] pt-1 pb-1 pr-2 pl-2 rounded-lg font-Estedad text-sm font-medium text-[#194BF0]">
+            لوکس
+          </button>
+          <button type="button"
+            class="w-32 h-12 border border-[#194BF0] pt-1 pb-1 pr-2 pl-2 rounded-lg font-Estedad text-sm font-medium text-[#194BF0]">
+            اقتصادی
+          </button>
+        </div>
+        <div class="w-46 h-12 flex justify-between items-center">
+          <span class="font-Estedad font-semibold text-lg text-[#194bf0]">مشاهده همه</span>
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+            stroke="currentColor" class="size-6 text-[#194bf0]">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5 8.25 12l7.5-7.5" />
+          </svg>
+        </div>
+      </div>
+    </section>
+    <section class="flex justify-center items-center mb-2">
+      <div class="w-93 md:w-306 h-127.5 flex flex-col gap-2 md:flex-row md:justify-between md:items-center">
+        <div class="w-98 h-127.5 bg-white rounded-2xl p-4 flex flex-col items-center gap-2 border border-[#D7D7D7]">
+          <div class="w-87.5 h-56.25">
+            <img src="/imags/benz1.jpg " alt="" class="object-contain" />
+          </div>
+          <div class="w-90 h-13">
+            <p class="font-Estedad text-sm font-bold text-[#0C0C0C]">
+              اجاره بنز E350 سدان
+            </p>
+            <span class="font-Estedad font-normal text-xs">مدل:2016</span>
+          </div>
+          <div class="w-90 h-11 bg-[#F3F3F3] rounded-lg p-2 flex justify-between items-center">
+            <div class="w-60 h-6 flex items-center">
+              <span class="font-Estedad text-xs font-normal">از ۱ تا 30 روز:</span>
+              <span class="font-Estedad font-bold text-sm text-[#194BF0]">8,500,000</span>
+            </div>
+            <div class="w-6.75 h-5.5 flex justify-center items-center">
+              <span class="font-Estedad font-normal text-xs">روزانه</span>
+            </div>
+          </div>
+          <div class="w-90 h-11 bg-[#F3F3F3] rounded-lg p-2 flex justify-between items-center">
+            <div class="w-60 h-6 flex items-center">
+              <span class="font-Estedad text-xs font-normal">از ۱ تا 30 روز:</span>
+              <span class="font-Estedad font-bold text-sm text-[#194BF0]">8,500,000</span>
+            </div>
+            <div class="w-6.75 h-5.5 flex justify-center items-center">
+              <span class="font-Estedad font-normal text-xs">ماهانه</span>
+            </div>
+          </div>
+          <div class="w-full h-px bg-gray-300"></div>
+          <div class="w-89.5 h-5.25 flex justify-between items-center">
+            <span class="font-Estedad text-xs font-medium text-[#212121]">مبلغ ضمانت:</span>
+            <span class="font-Estedad text-xs font-bold text-[#212121]">80 میلیون تومان</span>
+          </div>
+          <div>
+            <button type="button"
+              class="w-90 h-10 bg-[#194BF0] rounded-lg pt-1 pb-1 pr-4 pl-4 text-white text-sm font-semibold">
+              درخواست رزرو
+            </button>
+          </div>
+        </div>
+
+        <div class="w-98 h-127.5 bg-white rounded-2xl p-4 flex flex-col items-center gap-2 border border-[#D7D7D7]">
+          <div class="w-87.5 h-56.25">
+            <img src="/imags/toyotacover.jpg" alt="" class="object-contain" />
+          </div>
+          <div class="w-90 h-13">
+            <p class="font-Estedad text-sm font-bold text-[#0C0C0C]">
+              اجاره تویوتا لندکروز در تهران 2013
+            </p>
+            <span class="font-Estedad font-normal text-xs">مدل:2016</span>
+          </div>
+          <div class="w-90 h-11 bg-[#F3F3F3] rounded-lg p-2 flex justify-between items-center">
+            <div class="w-60 h-6 flex items-center">
+              <span class="font-Estedad text-xs font-normal">از ۱ تا 30 روز:</span>
+              <span class="font-Estedad font-bold text-sm text-[#194BF0]">8,500,000</span>
+            </div>
+            <div class="w-6.75 h-5.5 flex justify-center items-center">
+              <span class="font-Estedad font-normal text-xs">روزانه</span>
+            </div>
+          </div>
+          <div class="w-90 h-11 bg-[#F3F3F3] rounded-lg p-2 flex justify-between items-center">
+            <div class="w-60 h-6 flex items-center">
+              <span class="font-Estedad text-xs font-normal">از ۱ تا 30 روز:</span>
+              <span class="font-Estedad font-bold text-sm text-[#194BF0]">8,500,000</span>
+            </div>
+            <div class="w-6.75 h-5.5 flex justify-center items-center">
+              <span class="font-Estedad font-normal text-xs">ماهانه</span>
+            </div>
+          </div>
+          <div class="w-full h-px bg-gray-300"></div>
+          <div class="w-89.5 h-5.25 flex justify-between items-center">
+            <span class="font-Estedad text-xs font-medium text-[#212121]">مبلغ ضمانت:</span>
+            <span class="font-Estedad text-xs font-bold text-[#212121]">80 میلیون تومان</span>
+          </div>
+          <div>
+            <button type="button"
+              class="w-90 h-10 bg-[#194BF0] rounded-lg pt-1 pb-1 pr-4 pl-4 text-white text-sm font-semibold">
+              درخواست رزرو
+            </button>
+          </div>
+        </div>
+
+        <!-- btn -->
+        <div class="w-98 h-127.5 bg-white rounded-2xl p-4 flex flex-col items-center gap-2 border border-[#D7D7D7]">
+          <div class="w-87.5 h-56.25">
+            <img src="/imags/copecover.jpg" alt="" class="object-contain" />
+          </div>
+          <div class="w-90 h-13">
+            <p class="font-Estedad text-sm font-bold text-[#0C0C0C]">
+              اجاره جنسیس کوپه
+            </p>
+            <span class="font-Estedad font-normal text-xs">مدل:2016</span>
+          </div>
+          <div class="w-90 h-11 bg-[#F3F3F3] rounded-lg p-2 flex justify-between items-center">
+            <div class="w-60 h-6 flex items-center">
+              <span class="font-Estedad text-xs font-normal">از ۱ تا 30 روز:</span>
+              <span class="font-Estedad font-bold text-sm text-[#194BF0]">8,500,000</span>
+            </div>
+            <div class="w-6.75 h-5.5 flex justify-center items-center">
+              <span class="font-Estedad font-normal text-xs">روزانه</span>
+            </div>
+          </div>
+          <div class="w-90 h-11 bg-[#F3F3F3] rounded-lg p-2 flex justify-between items-center">
+            <div class="w-60 h-6 flex items-center">
+              <span class="font-Estedad text-xs font-normal">از ۱ تا 30 روز:</span>
+              <span class="font-Estedad font-bold text-sm text-[#194BF0]">8,500,000</span>
+            </div>
+            <div class="w-6.75 h-5.5 flex justify-center items-center">
+              <span class="font-Estedad font-normal text-xs">ماهانه</span>
+            </div>
+          </div>
+          <div class="w-full h-px bg-gray-300"></div>
+          <div class="w-89.5 h-5.25 flex justify-between items-center">
+            <span class="font-Estedad text-xs font-medium text-[#212121]">مبلغ ضمانت:</span>
+            <span class="font-Estedad text-xs font-bold text-[#212121]">80 میلیون تومان</span>
+          </div>
+          <div>
+            <button type="button"
+              class="w-90 h-10 bg-[#194BF0] rounded-lg pt-1 pb-1 pr-4 pl-4 text-white text-sm font-semibold">
+              درخواست رزرو
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- import card -->
+    <section class="flex justify-center items-center">
+      <div class="w-93 md:w-306 h-127.5 flex flex-col gap-2 md:flex-row md:justify-between md:items-center">
+        <div class="w-98 h-127.5 bg-white rounded-2xl p-4 flex flex-col items-center gap-2 border border-[#D7D7D7]">
+          <div class="w-87.5 h-56.25">
+            <img src="/imags/bmw528.jpg" alt="" class="object-contain" />
+          </div>
+          <div class="w-90 h-13">
+            <p class="font-Estedad text-sm font-bold text-[#0C0C0C]">
+              اجاره بی ام و 528
+            </p>
+            <span class="font-Estedad font-normal text-xs">مدل:2016</span>
+          </div>
+          <div class="w-90 h-11 bg-[#F3F3F3] rounded-lg p-2 flex justify-between items-center">
+            <div class="w-60 h-6 flex items-center">
+              <span class="font-Estedad text-xs font-normal">از ۱ تا 30 روز:</span>
+              <span class="font-Estedad font-bold text-sm text-[#194BF0]">8,500,000</span>
+            </div>
+            <div class="w-6.75 h-5.5 flex justify-center items-center">
+              <span class="font-Estedad font-normal text-xs">روزانه</span>
+            </div>
+          </div>
+          <div class="w-90 h-11 bg-[#F3F3F3] rounded-lg p-2 flex justify-between items-center">
+            <div class="w-60 h-6 flex items-center">
+              <span class="font-Estedad text-xs font-normal">از ۱ تا 30 روز:</span>
+              <span class="font-Estedad font-bold text-sm text-[#194BF0]">8,500,000</span>
+            </div>
+            <div class="w-6.75 h-5.5 flex justify-center items-center">
+              <span class="font-Estedad font-normal text-xs">ماهانه</span>
+            </div>
+          </div>
+          <div class="w-full h-px bg-gray-300"></div>
+          <div class="w-89.5 h-5.25 flex justify-between items-center">
+            <span class="font-Estedad text-xs font-medium text-[#212121]">مبلغ ضمانت:</span>
+            <span class="font-Estedad text-xs font-bold text-[#212121]">80 میلیون تومان</span>
+          </div>
+          <div>
+            <button type="button"
+              class="w-90 h-10 bg-[#194BF0] rounded-lg pt-1 pb-1 pr-4 pl-4 text-white text-sm font-semibold">
+              درخواست رزرو
+            </button>
+          </div>
+        </div>
+
+        <div class="w-98 h-127.5 bg-white rounded-2xl p-4 flex flex-col items-center gap-2 border border-[#D7D7D7]">
+          <div class="w-87.5 h-56.25">
+            <img src="/imags/hyonda2014.jpg" alt="" class="object-contain" />
+          </div>
+          <div class="w-90 h-13">
+            <p class="font-Estedad text-sm font-bold text-[#0C0C0C]">
+              اجاره هیوندای توسان 2014
+            </p>
+            <span class="font-Estedad font-normal text-xs">مدل:2016</span>
+          </div>
+          <div class="w-90 h-11 bg-[#F3F3F3] rounded-lg p-2 flex justify-between items-center">
+            <div class="w-60 h-6 flex items-center">
+              <span class="font-Estedad text-xs font-normal">از ۱ تا 30 روز:</span>
+              <span class="font-Estedad font-bold text-sm text-[#194BF0]">8,500,000</span>
+            </div>
+            <div class="w-6.75 h-5.5 flex justify-center items-center">
+              <span class="font-Estedad font-normal text-xs">روزانه</span>
+            </div>
+          </div>
+          <div class="w-90 h-11 bg-[#F3F3F3] rounded-lg p-2 flex justify-between items-center">
+            <div class="w-60 h-6 flex items-center">
+              <span class="font-Estedad text-xs font-normal">از ۱ تا 30 روز:</span>
+              <span class="font-Estedad font-bold text-sm text-[#194BF0]">8,500,000</span>
+            </div>
+            <div class="w-6.75 h-5.5 flex justify-center items-center">
+              <span class="font-Estedad font-normal text-xs">ماهانه</span>
+            </div>
+          </div>
+          <div class="w-full h-px bg-gray-300"></div>
+          <div class="w-89.5 h-5.25 flex justify-between items-center">
+            <span class="font-Estedad text-xs font-medium text-[#212121]">مبلغ ضمانت:</span>
+            <span class="font-Estedad text-xs font-bold text-[#212121]">80 میلیون تومان</span>
+          </div>
+          <div>
+            <button type="button"
+              class="w-90 h-10 bg-[#194BF0] rounded-lg pt-1 pb-1 pr-4 pl-4 text-white text-sm font-semibold">
+              درخواست رزرو
+            </button>
+          </div>
+        </div>
+
+        <!-- btn -->
+        <div class="w-98 h-127.5 bg-white rounded-2xl p-4 flex flex-col items-center gap-2 border border-[#D7D7D7]">
+          <div class="w-87.5 h-56.25">
+            <img src="/imags/krokcover.jpg" alt="" class="object-contain" />
+          </div>
+          <div class="w-90 h-13">
+            <p class="font-Estedad text-sm font-bold text-[#0C0C0C]">
+              اجاره بنز sl کروک
+            </p>
+            <span class="font-Estedad font-normal text-xs">مدل:2016</span>
+          </div>
+          <div class="w-90 h-11 bg-[#F3F3F3] rounded-lg p-2 flex justify-between items-center">
+            <div class="w-60 h-6 flex items-center">
+              <span class="font-Estedad text-xs font-normal">از ۱ تا 30 روز:</span>
+              <span class="font-Estedad font-bold text-sm text-[#194BF0]">8,500,000</span>
+            </div>
+            <div class="w-6.75 h-5.5 flex justify-center items-center">
+              <span class="font-Estedad font-normal text-xs">روزانه</span>
+            </div>
+          </div>
+          <div class="w-90 h-11 bg-[#F3F3F3] rounded-lg p-2 flex justify-between items-center">
+            <div class="w-60 h-6 flex items-center">
+              <span class="font-Estedad text-xs font-normal">از ۱ تا 30 روز:</span>
+              <span class="font-Estedad font-bold text-sm text-[#194BF0]">8,500,000</span>
+            </div>
+            <div class="w-6.75 h-5.5 flex justify-center items-center">
+              <span class="font-Estedad font-normal text-xs">ماهانه</span>
+            </div>
+          </div>
+          <div class="w-full h-px bg-gray-300"></div>
+          <div class="w-89.5 h-5.25 flex justify-between items-center">
+            <span class="font-Estedad text-xs font-medium text-[#212121]">مبلغ ضمانت:</span>
+            <span class="font-Estedad text-xs font-bold text-[#212121]">80 میلیون تومان</span>
+          </div>
+          <div>
+            <button type="button"
+              class="w-90 h-10 bg-[#194BF0] rounded-lg pt-1 pb-1 pr-4 pl-4 text-white text-sm font-semibold">
+              درخواست رزرو
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- import card end -->
+
+    <section class="hidden md:block">
+      <section class="flex justify-center items-center mt-6">
+        <div class="w-90.5 h-23.75 flex flex-col items-center">
+          <span class="font-Estedad text-lg font-normal text-[#5E5E5E]">چگونه در وبسایت</span>
+          <p class="text-2xl font-bold text-[#353535]">
+            <span class="text-2xl text-secondary-text font-bold">اُتـــورِنت،
+            </span>
+            خودرو رزرو کنیم؟
+          </p>
+        </div>
+      </section>
+    </section>
+    <!-- info strt -->
+    <section class="hidden md:block">
+      <section class="flex justify-center items-center">
+        <div class="w-131 h-225 flex flex-col gap-y-100">
+          <!-- one -->
+          <div class="w-lg h-23 flex justify-center items-center">
+            <div class="w-91.5 h-23 flex relative">
+              <div>
+                <div class="w-13 h-33 absolute -top-10">
+                  <img src="/imags/one.png" alt="" class="grayscale" />
+                  <div class="size-20 bg-white absolute top-18 -right-13 rounded-2xl flex justify-center items-center">
+                    <img src="/imags/carone.png" alt="" class="w-12 h-12 object-contain" />
+                  </div>
+                </div>
+              </div>
+              <div class="w-67.5 h-23 absolute top-8 right-14">
+                <p class="font-Estedad font-bold text-lg text-black">
+                  <span class="font-Estedad font-black text-lg text-secondary-text">خودروی</span>
+                  خود را انتخاب کنید.
+                </p>
+                <p class="font-Estedad text-sm font-medium text-[#5E5E5E]">
+                  خودروی مورد نظر خود را، متناسب با درخواست خود انتخاب کنید.
+                </p>
+              </div>
+            </div>
+          </div>
+          <!-- one end -->
+          <!-- +++++++++++++++++++++++++++++++++ -->
+          <div class="w-lg h-23 flex justify-center items-center">
+            <div class="w-91.5 h-23 flex relative">
+              <div>
+                <div class="w-13 h-33 absolute -top-10">
+                  <img src="/imags/three.png" alt="" class="grayscale" />
+                  <div class="size-20 bg-white absolute top-12 -right-6 rounded-2xl flex justify-center items-center">
+                    <img src="/imags/cards.png" alt="" class="w-12 h-12 object-contain" />
+                  </div>
+                </div>
+              </div>
+              <div class="w-67.5 h-23 absolute top-8 right-16">
+                <p class="font-Estedad font-bold text-lg text-black">
+                  <span class="font-Estedad font-black text-lg text-secondary-text">هزینه</span>
+                  اجاره را انتخاب کنید.
+                </p>
+                <p class="font-Estedad text-xs font-medium text-[#5E5E5E]">
+                  می توانید از طریق کیف پول آنلاین یا کارت های عضو شبکه شتاب
+                  هزینه اجاره را پرداخت کنید.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- blu car -->
+        <div class="w-98 h-225 md:relative">
+          <div class="w-12 h-225 bg-[#FDB713] mx-auto"></div>
+
+          <div class="w-98 h-186.5 md:absolute md:top-6 -left-5">
+            <img src="/imags/bluecaar.png" alt="" />
+          </div>
+        </div>
+        <!-- blu car end -->
+        <div class="w-131 h-225 flex flex-col gap-y-100">
+          <div class="w-lg h-23 flex justify-center items-center">
+            <div class="w-91.5 h-23 flex flex-row-reverse relative">
+              <div>
+                <div class="w-13 h-33 absolute -top-10">
+                  <img src="/imags/two.png" alt="" class="grayscale" />
+                  <div class="size-20 bg-white absolute top-12 -right-6 rounded-2xl flex justify-center items-center">
+                    <img src="/imags/calendar-tick.png" alt="" class="w-12 h-12 object-contain" />
+                  </div>
+                </div>
+              </div>
+              <div class="w-67.5 h-23 absolute top-8">
+                <p class="font-Estedad font-bold text-lg text-black">
+                  <span class="font-Estedad font-black text-lg text-secondary-text">تاریخ</span>
+                  تحویل را تعیین کنید.
+                </p>
+                <p class="font-Estedad text-xs font-medium text-[#5E5E5E]">
+                  تاریخ موردنظر خود را از تقویم، انتخاب و رزرو کنید
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="w-lg h-23 flex justify-center items-center">
+            <div class="w-91.5 h-23 flex flex-row-reverse relative">
+              <div>
+                <div class="w-13 h-33 absolute -top-10">
+                  <img src="/imags/four.png" alt="" class="grayscale" />
+                  <div class="size-20 bg-white absolute top-12 -right-6 rounded-2xl flex justify-center items-center">
+                    <img src="/imags/key.png" alt="" class="w-12 h-12 object-contain" />
+                  </div>
+                </div>
+              </div>
+              <div class="w-67.5 h-23 absolute top-8">
+                <p class="font-Estedad font-bold text-lg text-black">
+                  <span class="font-Estedad font-black text-lg text-secondary-text">خودرو</span>
+                  را دریافت کنید.
+                </p>
+                <p class="font-Estedad text-xs font-medium text-[#5E5E5E]">
+                  در زمان و مکان تعیین شده، خودروی خود را دریافت کنید.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </section>
+    <!-- info end -->
+
+    <section class="h-260 md:h-0 w-full md:w-0"></section>
+
+    <section class="flex justify-center items-center mt-6">
+      <div class="w-90.5 h-23.75 flex flex-col items-center">
+        <span class="font-Estedad text-lg font-normal text-[#5E5E5E]">پر تکرارترین سؤالاتی که پرسیدید</span>
+        <p class="text-2xl font-bold text-secondary-text">
+          <span class="text-2xl font-bold text-[#353535]">سؤالات </span>
+          متداول
+        </p>
+      </div>
+    </section>
+    <!-- solat motedavel -->
+    <section class="flex justify-center items-center">
+      <div class="w-93 md:w-306 h-250 md:h-114.75 flex-col flex md:flex-row justify-between items-center">
+        <div class="w-93 md:w-202 h-114.75 flex flex-col gap-y-4">
+          <div class="w-93 md:w-202 h-19 bg-white rounded-2xl pt-6 pb-6 pr-4 pl-4 flex items-center gap-x-1.5">
+            <img src="/imags/add-square.png" alt="" class="size-6" />
+            <span class="font-Estedad font-medium text-sm text-[#353535]">در صورت بروز نقص فنی برای خودرو چه اتفاقی می
+              افتد؟</span>
+          </div>
+
+          <div class="w-93 md:w-202 h-45.75 bg-white rounded-2xl pt-6 pb-6 pr-4 pl-4 space-y-3">
+            <div class="flex items-center gap-y-4">
+              <img src="/imags/minus-square.png" alt="" class="size-6" />
+              <span class="font-Estedad font-medium text-sm text-[#353535]">هزینه بنزین و کارواش در خودروهای اجاره ای به
+                عهده کیست؟</span>
+            </div>
+
+            <p class="font-Estedad text-sm font-normal text-[#727272]">
+              در زمان اجاره خودرو بدون راننده خودروها کارواش شده و با باک
+              بنزین پر تحویل مشتریان عزیز می گردد. در زمان استرداد خودرو در
+              صورتی که خودرو به کارواش نیاز داشته و یا خودرو دارای کسر سوخت
+              باشد هزینه آن بر عهده مشتری می باشد.
+            </p>
+          </div>
+          <div class="w-93 md:w-202 h-19 bg-white rounded-2xl pt-6 pb-6 pr-4 pl-4 flex items-center gap-x-1.5">
+            <img src="/imags/add-square.png" alt="" class="size-6" />
+            <span class="font-Estedad font-medium text-sm text-[#353535]">آیا ماشین های اتورنت دارای بیمه هستند؟</span>
+          </div>
+          <div class="w-93 md:w-202 h-19 bg-white rounded-2xl pt-6 pb-6 pr-4 pl-4 flex items-center gap-x-1.5">
+            <img src="/imags/add-square.png" alt="" class="size-6" />
+            <span class="font-Estedad font-medium text-sm text-[#353535]">محدودیت کیلومتر در اجاره خودرو چقدر می
+              باشد؟</span>
+          </div>
+        </div>
+        <div class="w-93 md:w-98 h-114.75">
+          <img src="/imags/man.png" alt="" class="w-93 md:w-98 h-114.75 rounded-2xl objet-fill" />
+        </div>
+      </div>
+    </section>
+    <!-- motedavel end -->
+    <section class="flex justify-center items-center mt-8">
+      <div class="w-90.5 h-23.75 flex flex-col items-center space-y-2">
+        <span class="font-Estedad text-lg font-normal text-[#5E5E5E]">آنچه مشتریان ما درموردمان گفته‌اند.</span>
+        <p class="text-2xl font-bold text-secondary-text">
+          <span class="text-2xl font-bold text-[#353535]">نظرات </span>
+          مشتریان
+        </p>
+      </div>
+    </section>
+    <!-- nazarat -->
+    <section class="flex justify-center items-center">
+      <div class="w-93 md:w-306.25 h-200 md:h-127.75 flex flex-col items-center md:gap-y-4 gap-2">
+        <div class="w-93 md:w-305.5 md:h-91.75 flex flex-col items-center gap-y-3 bg-white rounded-2xl pt-4 pb-4">
+          <div class="w-34 h-57 flex flex-col items-center gap-y-2">
+            <div class="size-34">
+              <img src="/imags/woman.jpg" alt="" class="rounded-full border-4 border-[#194BF0]" />
+            </div>
+            <span class="font-Estedad font-medium text-sm text-[#0C0C0C]">اولدوز بهاور</span>
+            <div class="w-34 h-6">
+              <img src="/imags/stars.png" alt="" />
+            </div>
+          </div>
+          <div class="w-93 md:w-194 h-26.75 text-center">
+            <p class="font-Estedad font-normal text-xs md:text-sm text-[#727272] leading-8">
+              اولین بار بود که برای مسافرت ماشین اجاره می‌کردم و به دنبال یک
+              شرکت با سابقه و مطمئن می‌گشتم!بدون هیچ شکی میگم، اتو رنت تو کار
+              خودش بهترینه!پشتیبانی عالی، هزینه بسیار مناسب، آسان بودن روند
+              اجاره و رزرو؛ هرچی بگم کم گفتم!حتماً دفعه بعد هم برای اجاره
+              ماشین به سراغشون میام.
+            </p>
+          </div>
+        </div>
+        <div class="w-93 md:w-306 h-24 flex flex-col items-center gap-2 md:flex-row md:justify-between md:items-center">
+          <div class="w-72 h-24 bg-[#FDB713] rounded-2xl p-4 flex justify-center items-center">
+            <div class="w-64 h-16 flex gap-x-2 items-center">
+              <div class="size-16">
+                <img src="/imags/woman.jpg" alt="" class="rounded-full" />
+              </div>
+              <div class="w-22.5 h-14 flex flex-col items-center gap-y-2">
+                <span class="font-Estedad font-medium text-sm text-[#212121]">اولدوز بهاور</span>
+                <span class="font-Estedad font-normal text-xs text-[#494949]">27 دی ماه 1380</span>
+              </div>
+            </div>
+          </div>
+          <div class="w-72 h-24 bg-white rounded-2xl p-4 flex justify-center items-center">
+            <div class="w-64 h-16 flex gap-x-2 items-center">
+              <div class="size-16">
+                <img src="/imags/avatar.jpg" alt="" class="rounded-full" />
+              </div>
+              <div class="w-30 h-14 flex flex-col items-center gap-y-2">
+                <span class="font-Estedad font-medium text-sm text-[#212121]">محمدجواد امینی</span>
+                <span class="font-Estedad font-normal text-xs text-[#494949]">27 دی ماه 1399</span>
+              </div>
+            </div>
+          </div>
+          <div class="w-72 h-24 bg-white rounded-2xl p-4 flex justify-center items-center">
+            <div class="w-64 h-16 flex gap-x-2 items-center">
+              <div class="size-16">
+                <img src="/imags/avatar1.jpg" alt="" class="rounded-full" />
+              </div>
+              <div class="w-30 h-14 flex flex-col items-center gap-y-2">
+                <span class="font-Estedad font-medium text-sm text-[#212121]">فرزانه حیدری</span>
+                <span class="font-Estedad font-normal text-xs text-[#494949]">27 دی ماه 1380</span>
+              </div>
+            </div>
+          </div>
+          <div class="w-72 h-24 bg-white rounded-2xl p-4 flex justify-center items-center">
+            <div class="w-64 h-16 flex gap-x-2 items-center">
+              <div class="size-16">
+                <img src="/imags/avatar2.jpg" alt="" class="rounded-full" />
+              </div>
+              <div class="w-30 h-14 flex flex-col items-center gap-y-2">
+                <span class="font-Estedad font-medium text-sm text-[#212121]">فاطمه ابراهیمی‌فر</span>
+                <span class="font-Estedad font-normal text-xs text-[#494949]">27 دی ماه 1380</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="flex justify-center items-center mt-6">
+      <div class="w-90.5 h-23.75 flex flex-col items-center">
+        <span class="font-Estedad text-lg font-normal text-[#5E5E5E]">مقالات ما</span>
+        <p class="text-2xl font-bold text-secondary-text">
+          <span class="text-2xl font-bold text-[#353535]">مجله </span>
+          خودرو
+        </p>
+      </div>
+    </section>
+    <!-- blog strt -->
+    <section class="flex justify-center items-center">
+      <div
+        class="w-93 md:w-305.25 h-280 md:h-92.5 flex flex-col items-center gap-y-2 md:flex-row md:justify-between md:items-center">
+        <div class="w-97.75 h-92.5 bg-white rounded-2xl p-4">
+          <div class="w-89.75 h-84.5 flex flex-col items-center gap-y-4">
+            <div class="w-89.75 h-48.75 overflow-hidden">
+              <img src="/imags/bluelexus.jpg" alt="" class="rounded-xl" />
+            </div>
+            <div class="w-89.75 h-31.75 space-y-4.5">
+              <h4 class="font-Estedad font-medium text-sm text-[#414141]">
+                روش های مختلف برای اجاره خودرو
+              </h4>
+              <p class="font-Estedad font-normal text-xs text-[#757575]">
+                 امروزه با تغییراتی که در سبک زندگی مردم و شرایط اقتصادی جوامع
+                به وجود آمده است نیازهای افراد و نحوه دسترسی به آنها نیز دچار
+                تحولاتی شده است.
+              </p>
+              <div class="w-87.75 h-6.35 flex gap-x-2">
+                <div class="w-17.5 h-6.25 flex items-center gap-x-1">
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                    stroke="currentColor" class="size-4 text-[#757575]">
+                    <path stroke-linecap="round" stroke-linejoin="round"
+                      d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+                  </svg>
+                  <span class="font-Estedad font-normal text-sm text-[#757575]">3دقیقه</span>
+                </div>
+                <div class="w-17.5 h-6.25 flex items-center gap-x-1">
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                    stroke="currentColor" class="size-4 text-[#757575]">
+                    <path stroke-linecap="round" stroke-linejoin="round"
+                      d="M2.036 12.322a1.012 1.012 0 0 1 0-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.431 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178Z" />
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
+                  </svg>
+
+                  <span class="font-Estedad font-normal text-sm text-[#757575]">1,213</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="w-97.75 h-92.5 bg-white rounded-2xl p-4">
+          <div class="w-89.75 h-84.5 flex flex-col items-center gap-y-4">
+            <div class="w-89.75 h-48.75 overflow-hidden">
+              <img src="/imags/camero.jpg" alt="" class="rounded-xl" />
+            </div>
+            <div class="w-89.75 h-31.75 space-y-4.5">
+              <h4 class="font-Estedad font-medium text-sm text-[#414141]">
+                روش های مختلف برای اجاره خودرو
+              </h4>
+              <p class="font-Estedad font-normal text-xs text-[#757575]">
+                 امروزه با تغییراتی که در سبک زندگی مردم و شرایط اقتصادی جوامع
+                به وجود آمده است نیازهای افراد و نحوه دسترسی به آنها نیز دچار
+                تحولاتی شده است.
+              </p>
+              <div class="w-87.75 h-6.35 flex gap-x-2">
+                <div class="w-17.5 h-6.25 flex items-center gap-x-1">
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                    stroke="currentColor" class="size-4 text-[#757575]">
+                    <path stroke-linecap="round" stroke-linejoin="round"
+                      d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+                  </svg>
+                  <span class="font-Estedad font-normal text-sm text-[#757575]">3دقیقه</span>
+                </div>
+                <div class="w-17.5 h-6.25 flex items-center gap-x-1">
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                    stroke="currentColor" class="size-4 text-[#757575]">
+                    <path stroke-linecap="round" stroke-linejoin="round"
+                      d="M2.036 12.322a1.012 1.012 0 0 1 0-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.431 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178Z" />
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
+                  </svg>
+
+                  <span class="font-Estedad font-normal text-sm text-[#757575]">1,213</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="w-97.75 h-92.5 bg-white rounded-2xl p-4">
+          <div class="w-89.75 h-84.5 flex flex-col items-center gap-y-4">
+            <div class="w-89.75 h-48.75 overflow-hidden">
+              <img src="/imags/jeep1.jpg" alt="" class="rounded-xl" />
+            </div>
+            <div class="w-89.75 h-31.75 space-y-4.5">
+              <h4 class="font-Estedad font-medium text-sm text-[#414141]">
+                روش های مختلف برای اجاره خودرو
+              </h4>
+              <p class="font-Estedad font-normal text-xs text-[#757575]">
+                 امروزه با تغییراتی که در سبک زندگی مردم و شرایط اقتصادی جوامع
+                به وجود آمده است نیازهای افراد و نحوه دسترسی به آنها نیز دچار
+                تحولاتی شده است.
+              </p>
+              <div class="w-87.75 h-6.35 flex gap-x-2">
+                <div class="w-17.5 h-6.25 flex items-center gap-x-1">
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                    stroke="currentColor" class="size-4 text-[#757575]">
+                    <path stroke-linecap="round" stroke-linejoin="round"
+                      d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+                  </svg>
+                  <span class="font-Estedad font-normal text-sm text-[#757575]">3دقیقه</span>
+                </div>
+                <div class="w-17.5 h-6.25 flex items-center gap-x-1">
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                    stroke="currentColor" class="size-4 text-[#757575]">
+                    <path stroke-linecap="round" stroke-linejoin="round"
+                      d="M2.036 12.322a1.012 1.012 0 0 1 0-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.431 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178Z" />
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
+                  </svg>
+
+                  <span class="font-Estedad font-normal text-sm text-[#757575]">1,213</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <!-- main end -->
+
+  <footer class="w-93 md:w-306 h-190 md:h-108 rounded-2xl pt-14 pb-14 pr-6 pl-6 m-auto bg-[#1E1E1EE5]">
+    <div
+      class="w-87 md:w-280 h-60 md:h-25.25 flex flex-wrap md:flex-nowrap justify-between items-center rounded-2xl p-4 md:m-auto border border-[#868686]">
+      <div class="w-63.75 h-17.25 flex items-center gap-x-3.5">
+        <div class="size-12 p-3 rounded-xl border border-white flex justify-center items-center">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+            stroke="currentColor" class="size-6 text-white">
+            <path stroke-linecap="round" stroke-linejoin="round"
+              d="M14.25 9.75v-4.5m0 4.5h4.5m-4.5 0 6-6m-3 18c-8.284 0-15-6.716-15-15V4.5A2.25 2.25 0 0 1 4.5 2.25h1.372c.516 0 .966.351 1.091.852l1.106 4.423c.11.44-.054.902-.417 1.173l-1.293.97a1.062 1.062 0 0 0-.38 1.21 12.035 12.035 0 0 0 7.143 7.143c.441.162.928-.004 1.21-.38l.97-1.293a1.125 1.125 0 0 1 1.173-.417l4.423 1.106c.5.125.852.575.852 1.091V19.5a2.25 2.25 0 0 1-2.25 2.25h-2.25Z" />
+          </svg>
+        </div>
+        <div class="w-28.25 h-17.25 flex flex-col items-center justify-center space-y-2">
+          <p class="font-Estedad font-normal text-sm text-[#FFFBFB]">
+            ارتباط با ما
+          </p>
+          <p class="font-Estedad font-normal text-sm text-[#FFFFFF]">
+            0912-21326545
+          </p>
+        </div>
+      </div>
+      <div class="w-8 h-0 border border-[#868686] -rotate-90 mt-9 mr-5 hidden md:block"></div>
+
+      <div class="w-63.75 h-17.25 flex items-center gap-x-3.5">
+        <div class="size-12 p-3 rounded-xl border border-white flex justify-center items-center">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+            stroke="currentColor" class="size-6 text-white">
+            <path stroke-linecap="round" stroke-linejoin="round"
+              d="M21.75 6.75v10.5a2.25 2.25 0 0 1-2.25 2.25h-15a2.25 2.25 0 0 1-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25m19.5 0v.243a2.25 2.25 0 0 1-1.07 1.916l-7.5 4.615a2.25 2.25 0 0 1-2.36 0L3.32 8.91a2.25 2.25 0 0 1-1.07-1.916V6.75" />
+          </svg>
+        </div>
+        <div class="w-28.25 h-17.25 flex flex-col items-center justify-center space-y-2">
+          <p class="font-Estedad font-normal text-sm text-[#FFFBFB]">ایمیل</p>
+          <p class="font-Estedad font-normal text-sm text-[#FFFFFF]">
+            autorent@info.com
+          </p>
+        </div>
+      </div>
+      <div class="w-8 h-0 border border-[#868686] -rotate-90 mt-9 mr-5 hidden md:block"></div>
+
+      <div class="w-63.75 h-17.25 flex items-center gap-x-3.5">
+        <div class="size-12 p-3 rounded-xl border border-white flex justify-center items-center">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+            stroke="currentColor" class="size-6 text-white">
+            <path stroke-linecap="round" stroke-linejoin="round"
+              d="M9 6.75V15m6-6v8.25m.503 3.498 4.875-2.437c.381-.19.622-.58.622-1.006V4.82c0-.836-.88-1.38-1.628-1.006l-3.869 1.934c-.317.159-.69.159-1.006 0L9.503 3.252a1.125 1.125 0 0 0-1.006 0L3.622 5.689C3.24 5.88 3 6.27 3 6.695V19.18c0 .836.88 1.38 1.628 1.006l3.869-1.934c.317-.159.69-.159 1.006 0l4.994 2.497c.317.158.69.158 1.006 0Z" />
+          </svg>
+        </div>
+        <div class="w-28.25 h-17.25 flex flex-col items-center justify-center space-y-2">
+          <p class="font-Estedad font-normal text-sm text-[#FFFBFB]">آدرس</p>
+          <p class="font-Estedad font-normal text-sm text-[#FFFFFF]">
+            تهران- خ شادمان
+          </p>
+        </div>
+      </div>
     </div>
 
-    <script src="./node_modules/flowbite/dist/flowbite.min.js"></script>
-    <script src="./node_modules/swiper/swiper-bundle.min.js"></script>
-    <script src="./src/main.js"></script>
-  </body>
+    <div class="w-93 md:w-294 h-100 md:h-58.25 m-auto flex flex-col md:flex-row md:justify-center md:items-center">
+      <div
+        class="w-93 md:w-278.75 h-100 md:h-42 flex flex-col items-center md:flex md:flex-row md:justify-around md:items-center">
+        <div class="w-90 md:w-143 h-100 md:h-42 flex flex-col items-center md:flex-row md:items-start md:flex">
+          <div class="w-90 md:w-109.5 h-42">
+            <div class="w-37.75 h-15 m-auto md:m-0">
+              <img src="/imags/footerlogo.png" alt="" />
+            </div>
+            <div class="w-90 md:w-101.75 h-21.25">
+              <p class="font-Estedad md:font-extralight font-xs text-white">
+                اتورنت با رویکرد اعتماد به مشتری، با در اختیار داشتن بزرگترین
+                ناوگان خودرویی متشکل از انواع خودروهای<br />
+                صفر<br />
+                کیلومتر، اقتصادی تا تجاری در سراسر کشور ایران آماده خدمت‌رسانی
+                به مشتریان است.
+              </p>
+            </div>
+          </div>
+          <div class="w-33.5 h-39 flex flex-col justify-around items-center">
+            <a href="#" class="font-Estedad font-normal text-xs text-white">دسترسی آسان</a>
+
+            <a href="#" class="font-Estedad font-medium text-xs text-white">سوالات متداول</a>
+
+            <a href="#" class="font-Estedad font-medium text-xs text-white">تماس با ما</a>
+
+            <a href="#" class="font-Estedad font-medium text-xs text-white">درباره ما</a>
+          </div>
+        </div>
+        <div class="w-80 h-20 space-y-3">
+          <h5 class="font-Estedad font-semibold text-sm text-white">
+            خبرنامه
+          </h5>
+          <div class="w-77 h-10 rounded-2xl p-1 flex border border-[#ffffff]">
+            <form action="">
+              <input type="text" placeholder="ایمیل خود را وارد کنید"
+                class="border-0 w-58.5 h-8 font-Estedad font-normal text-xs text-[#C2C2C2] bg-[#1E1E1EE5]/70" />
+            </form>
+            <button type="button"
+              class="w-16.5 h-8 bg-[#FDB713] rounded-md pt-3 pb-3 pr-4 pl-4 font-Estedad font-semibold text-xs text-[#212121] flex justify-center items-center">
+              ارسال
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="w-full md:w-280 h-0.5 m-auto mb-4 mt-3 md:mt-0 md:mb-2 bg-[#868686]">
+      <span class="text-[#1E1E1EE5]/10"> *</span>
+    </div>
+    <div class="w-78.75 h-6.25 flex border m-auto">
+      <img src="/imags/creative-commons.png" alt="" />
+      <p class="font-Estedad font-medium text-sm text-[#9A9A9A]">
+        تمامی حقوق این وبسایت متعلق به اتورنت می‌باشد
+      </p>
+    </div>
+  </footer>
+  <br /><br /><br />
+
+  <script src="https://cdn.jsdelivr.net/npm/flowbite@4.0.1/dist/flowbite.min.js"></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
+  <script src="./src/main.js"></script>
+</body>
+
 </html>
