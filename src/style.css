@@ -1,0 +1,9 @@
+@import "tailwindcss";
+@theme {
+  --color-secondary-text: #fdb713;
+}
+@layer components {
+  .bg-hero {
+    @apply bg-[url(../public/imags/heroPic.jpg)] bg-no-repeat bg-center bg-cover;
+  }
+}
