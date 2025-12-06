@@ -13,7 +13,7 @@
 </head>
 
 <body class=" h-1000 bg-[#F3F3F3]">
-
+    <!-- header stat -->
     <header class="overflow-hidden ">
         <div class="w-full h-100 border bg-hero bg-[url(/imags/heroPic.jpg)] relative">
             <div class="w-full h-100 bg-[#00000099]/60 flex justify-center items-center">
@@ -65,7 +65,7 @@
                         </button>
                     </div>
                     <div x-show="open"
-                        class="bg-white border-t border-gray-100 py-4 px-3 absolute top-17 right-1 w-93 md:hidden">
+                        class="bg-white border-t border-gray-100 py-4 px-3 absolute top-14.5 right-1 w-93 md:hidden">
                         <a href="#"
                             class="font-Estedad text-[#353535] font-medium text-base hover:text-gray-500 block">رزرو
                             خودرو</a>
@@ -96,7 +96,382 @@
             </div>
         </div>
     </header>
-    <div class="w-300 h-24 bg-sky-600"></div>
+    <!-- header end -->
+
+    <!-- main strt -->
+    <main>
+        <section>
+
+            <div class="w-93 md:w-300 h-700 md:h-303.25 flex flex-col md:flex-row m-auto">
+                <div class="w-72 h-169.75 bg-white rounded-2xl pt-6 pb-6">
+                    <div class="w-60 h-23.5 ">
+                        <div class="w-60 h-7.25 flex justify-around items-center">
+                            <span class="font-Estedad font-medium text-sm text-[#727272]">قیمت اجاره خودرو</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                                stroke="currentColor" class="size-4 text-[#727272]">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 15.75 7.5-7.5 7.5 7.5" />
+                            </svg>
+                        </div>
+                        <div class="w-60 h-6.25 flex justify-around items-center">
+                            <span class="font-Estedad font-medium text-xs text-[#5E5E5E]">از 60,000,000 تومان</span>
+                            <span class="font-Estedad font-medium text-xs text-[#5e5e5e]">تا 6,000,000 تومان</span>
+                        </div>
+                        <div class="w-60 h-4">
+                            <img src="/imags/range.png" alt="" />
+                        </div>
+                    </div>
+                    <div class="w-60 h-56.75 border-t">
+                        <div class="w-60 h-7.25 flex justify-around items-center">
+                            <span class="font-Estedad font-medium text-sm text-[#727272]">برند خودرو</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                                stroke="currentColor" class="size-4 text-[#727272]">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 15.75 7.5-7.5 7.5 7.5" />
+                            </svg>
+                        </div>
+                        <div class="w-60 h-50">
+                            <form action="/action_page.php">
+                                <input type="checkbox" id="BENZ" name="BENZ" value="rent" />
+                                <label for="BENZ" class="font-Estedad font-medium text-sm text-[#494949]">اجاره
+                                    بنز</label><br />
+                                <input type="checkbox" id="BMW" name="bmw" value="rent1" />
+                                <label for="BMW" class="font-Estedad font-medium text-sm text-[#494949]">اجاره بی ام
+                                    و</label><br />
+                                <input type="checkbox" id="PEJO" name="pejo" value="rent2" />
+                                <label for="PEJO" class="font-Estedad font-medium text-sm text-[#494949]">
+                                    اجاره پژو</label>
+                                <br />
+                                <input type="checkbox" id="porsh" name="porsheh" value="rent3" />
+                                <label for="porsh" class="font-Estedad font-medium text-sm text-[#494949]">
+                                    اجاره پورشه</label>
+                                <br />
+                                <input type="checkbox" id="kia" name="Kiaa" value="rent4" />
+                                <label for="kia" class="font-Estedad font-medium text-sm text-[#494949]">
+                                    اجاره کیا</label>
+                                <br />
+                                <input type="checkbox" id="huynda" name="Huynda" value="rent5" />
+                                <label for="huynda" class="font-Estedad font-medium text-sm text-[#494949]">
+                                    اجاره هیوندای</label>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="w-60 h-56.75">
+                        <div class="w-60 h-7.25 flex justify-around items-center">
+                            <span class="font-Estedad font-medium text-sm text-[#727272]">اجاره خودرو براساس نیاز
+                                شما</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                                stroke="currentColor" class="size-4 text-[#727272]">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 15.75 7.5-7.5 7.5 7.5" />
+                            </svg>
+                        </div>
+
+                        <div class="w-60 h-50">
+                            <form action="/action_page.php">
+                                <input type="radio" id="BENZ" name="car" value="rent" />
+                                <label for="BENZ" class="font-Estedad font-medium text-sm text-[#494949]">اجاره
+                                    بنز</label><br />
+                                <input type="radio" id="BMW" name="car" value="rent1" />
+                                <label for="BMW" class="font-Estedad font-medium text-sm text-[#494949]">اجاره بی ام
+                                    و</label><br />
+                                <input type="radio" id="PEJO" name="car" value="rent2" />
+                                <label for="PEJO" class="font-Estedad font-medium text-sm text-[#494949]">
+                                    اجاره پژو</label>
+                                <br />
+                                <input type="radio" id="porsh" name="car" value="rent3" />
+                                <label for="porsh" class="font-Estedad font-medium text-sm text-[#494949]">
+                                    اجاره پورشه</label>
+                                <br />
+                                <input type="radio" id="kia" name="car" value="rent4" />
+                                <label for="kia" class="font-Estedad font-medium text-sm text-[#494949]">
+                                    اجاره کیا</label>
+                                <br />
+                                <input type="radio" id="huynda" name="car" value="rent5" />
+                                <label for="huynda" class="font-Estedad font-medium text-sm text-[#494949]">
+                                    اجاره هیوندای</label>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="w-93 md:w-228 h-700 md:h-297  space-y-6">
+                    <div class="w-93 md:w-228 h-28 md:h-12.5 flex flex-col mb-3 md:mb-6  gap-y-2 md:flex-row md:gap-1">
+                        <div class="w-93 md:w-150 h-12 rounded-lg p-3 border border-[#9A9A9A]">
+                            <form action="" class="">
+                                <select name="airplan" id="airplan"
+                                    class="w-90 md:w-148 h-8 border-none text-xs font-Estedad tetx-[#868686]">
+                                    <option value="air">تقویم قیمتی</option>
+                                </select>
+                            </form>
+                        </div>
+                        <div class="w-71.75 h-12.5 rounded-lg p-3 border border-[#9A9A9A]">
+                            <form action="" class="">
+                                <select name="airplan" id="airplan"
+                                    class="w-70 h-8 border-none text-xs font-Estedad tetx-[#868686]">
+                                    <option value="air">مرتب سازی</option>
+                                </select>
+                            </form>
+                        </div>
+
+
+                    </div>
+                    <div
+                        class="w-93 md:w-228  h-400 md:h-127.5  flex flex-col items-center gap-y-3 md:gap-0  md:flex-row md:justify-between md:items-start">
+                        <div
+                            class="w-72 h-127.5 bg-white rounded-2xl p-4 flex flex-col items-center gap-y-3 border border-[#D7D7D7]">
+                            <div class="w-64 h-48">
+                                <img src="/imags/benzcover.jpg" alt="" class="object-contain" />
+                            </div>
+                            <div class="w-64 h-13">
+                                <p class="font-Estedad text-sm font-bold text-[#0C0C0C]">
+                                    اجاره بنز s500
+                                </p>
+                                <span class="font-Estedad font-normal text-xs text-[#868686]">مدل:2016</span>
+                            </div>
+                            <div class="w-64 h-11 bg-[#F3F3F3] rounded-lg p-2 flex justify-between items-center">
+                                <div class="w-60 h-6 flex items-center">
+                                    <span class="font-Estedad text-xs font-normal">از ۱ تا 30 روز:</span>
+                                    <span class="font-Estedad font-bold text-sm text-[#194BF0]">8,500,000</span>
+                                </div>
+                                <div class="w-6.75 h-5.5 flex justify-center items-center">
+                                    <span class="font-Estedad font-normal text-xs">روزانه</span>
+                                </div>
+                            </div>
+                            <div class="w-64 h-11 bg-[#F3F3F3] rounded-lg p-2 flex justify-between items-center">
+                                <div class="w-60 h-6 flex items-center">
+                                    <span class="font-Estedad text-xs font-normal">از ۱ تا 30 روز:</span>
+                                    <span class="font-Estedad font-bold text-sm text-[#194BF0]">8,500,000</span>
+                                </div>
+                                <div class="w-6.75 h-5.5 flex justify-center items-center">
+                                    <span class="font-Estedad font-normal text-xs">ماهانه</span>
+                                </div>
+                            </div>
+                            <div class="w-full h-px bg-gray-300"></div>
+                            <div class="w-64 h-5.25 flex justify-between items-center">
+                                <span class="font-Estedad text-xs font-medium text-[#212121]">مبلغ ضمانت:</span>
+                                <span class="font-Estedad text-xs font-bold text-[#212121]">80 میلیون تومان</span>
+                            </div>
+                            <div>
+                                <button type="button"
+                                    class="w-64 h-10 bg-[#194BF0] rounded-lg pt-1 pb-1 pr-4 pl-4 text-white text-sm font-semibold">
+                                    درخواست رزرو
+                                </button>
+                            </div>
+                        </div>
+                        <div
+                            class="w-72 h-127.5 bg-white rounded-2xl p-4 flex flex-col items-center gap-y-3 border border-[#D7D7D7]">
+                            <div class="w-64 h-48">
+                                <img src="/imags/bkrok.jpg" alt="" class="object-contain" />
+                            </div>
+                            <div class="w-64 h-13">
+                                <p class="font-Estedad text-sm font-bold text-[#0C0C0C]">
+                                    اجاره بنز sl کروک
+                                </p>
+                                <span class="font-Estedad font-normal text-xs text-[#868686]">مدل:2016</span>
+                            </div>
+                            <div class="w-64 h-11 bg-[#F3F3F3] rounded-lg p-2 flex justify-between items-center">
+                                <div class="w-60 h-6 flex items-center">
+                                    <span class="font-Estedad text-xs font-normal">از ۱ تا 30 روز:</span>
+                                    <span class="font-Estedad font-bold text-sm text-[#194BF0]">8,500,000</span>
+                                </div>
+                                <div class="w-6.75 h-5.5 flex justify-center items-center">
+                                    <span class="font-Estedad font-normal text-xs">روزانه</span>
+                                </div>
+                            </div>
+                            <div class="w-64 h-11 bg-[#F3F3F3] rounded-lg p-2 flex justify-between items-center">
+                                <div class="w-60 h-6 flex items-center">
+                                    <span class="font-Estedad text-xs font-normal">از ۱ تا 30 روز:</span>
+                                    <span class="font-Estedad font-bold text-sm text-[#194BF0]">8,500,000</span>
+                                </div>
+                                <div class="w-6.75 h-5.5 flex justify-center items-center">
+                                    <span class="font-Estedad font-normal text-xs">ماهانه</span>
+                                </div>
+                            </div>
+                            <div class="w-full h-px bg-gray-300"></div>
+                            <div class="w-64 h-5.25 flex justify-between items-center">
+                                <span class="font-Estedad text-xs font-medium text-[#212121]">مبلغ ضمانت:</span>
+                                <span class="font-Estedad text-xs font-bold text-[#212121]">80 میلیون تومان</span>
+                            </div>
+                            <div>
+                                <button type="button"
+                                    class="w-64 h-10 bg-[#194BF0] rounded-lg pt-1 pb-1 pr-4 pl-4 text-white text-sm font-semibold">
+                                    درخواست رزرو
+                                </button>
+                            </div>
+                        </div>
+                        <div
+                            class="w-72 h-127.5 bg-white rounded-2xl p-4 flex flex-col items-center gap-y-3 border border-[#D7D7D7]">
+                            <div class="w-64 h-48">
+                                <img src="/imags/sedancover.jpg" alt="" class="object-contain" />
+                            </div>
+                            <div class="w-64 h-13">
+                                <p class="font-Estedad text-sm font-bold text-[#0C0C0C]">
+                                    اجاره بنز E350 سدان
+                                </p>
+                                <span class="font-Estedad font-normal text-xs text-[#868686]">مدل:2016</span>
+                            </div>
+                            <div class="w-64 h-11 bg-[#F3F3F3] rounded-lg p-2 flex justify-between items-center">
+                                <div class="w-60 h-6 flex items-center">
+                                    <span class="font-Estedad text-xs font-normal">از ۱ تا 30 روز:</span>
+                                    <span class="font-Estedad font-bold text-sm text-[#194BF0]">8,500,000</span>
+                                </div>
+                                <div class="w-6.75 h-5.5 flex justify-center items-center">
+                                    <span class="font-Estedad font-normal text-xs">روزانه</span>
+                                </div>
+                            </div>
+                            <div class="w-64 h-11 bg-[#F3F3F3] rounded-lg p-2 flex justify-between items-center">
+                                <div class="w-60 h-6 flex items-center">
+                                    <span class="font-Estedad text-xs font-normal">از ۱ تا 30 روز:</span>
+                                    <span class="font-Estedad font-bold text-sm text-[#194BF0]">8,500,000</span>
+                                </div>
+                                <div class="w-6.75 h-5.5 flex justify-center items-center">
+                                    <span class="font-Estedad font-normal text-xs">ماهانه</span>
+                                </div>
+                            </div>
+                            <div class="w-full h-px bg-gray-300"></div>
+                            <div class="w-64 h-5.25 flex justify-between items-center">
+                                <span class="font-Estedad text-xs font-medium text-[#212121]">مبلغ ضمانت:</span>
+                                <span class="font-Estedad text-xs font-bold text-[#212121]">80 میلیون تومان</span>
+                            </div>
+                            <div>
+                                <button type="button"
+                                    class="w-64 h-10 bg-[#194BF0] rounded-lg pt-1 pb-1 pr-4 pl-4 text-white text-sm font-semibold">
+                                    درخواست رزرو
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div
+                        class="w-93 md:w-228  h-400 md:h-127.5  flex flex-col items-center gap-y-3 md:gap-0  md:flex-row md:justify-between md:items-start">
+                        <div
+                            class="w-72 h-127.5 bg-white rounded-2xl p-4 flex flex-col items-center gap-y-3 border border-[#D7D7D7]">
+                            <div class="w-64 h-48">
+                                <img src="/imags/benze.jpg" alt="" class="object-contain" />
+                            </div>
+                            <div class="w-64 h-13">
+                                <p class="font-Estedad text-sm font-bold text-[#0C0C0C]">
+                                    اجاره خودرو بنز E250
+                                </p>
+                                <span class="font-Estedad font-normal text-xs text-[#868686]">مدل:2016</span>
+                            </div>
+                            <div class="w-64 h-11 bg-[#F3F3F3] rounded-lg p-2 flex justify-between items-center">
+                                <div class="w-60 h-6 flex items-center">
+                                    <span class="font-Estedad text-xs font-normal">از ۱ تا 30 روز:</span>
+                                    <span class="font-Estedad font-bold text-sm text-[#194BF0]">8,500,000</span>
+                                </div>
+                                <div class="w-6.75 h-5.5 flex justify-center items-center">
+                                    <span class="font-Estedad font-normal text-xs">روزانه</span>
+                                </div>
+                            </div>
+                            <div class="w-64 h-11 bg-[#F3F3F3] rounded-lg p-2 flex justify-between items-center">
+                                <div class="w-60 h-6 flex items-center">
+                                    <span class="font-Estedad text-xs font-normal">از ۱ تا 30 روز:</span>
+                                    <span class="font-Estedad font-bold text-sm text-[#194BF0]">8,500,000</span>
+                                </div>
+                                <div class="w-6.75 h-5.5 flex justify-center items-center">
+                                    <span class="font-Estedad font-normal text-xs">ماهانه</span>
+                                </div>
+                            </div>
+                            <div class="w-full h-px bg-gray-300"></div>
+                            <div class="w-64 h-5.25 flex justify-between items-center">
+                                <span class="font-Estedad text-xs font-medium text-[#212121]">مبلغ ضمانت:</span>
+                                <span class="font-Estedad text-xs font-bold text-[#212121]">80 میلیون تومان</span>
+                            </div>
+                            <div>
+                                <button type="button"
+                                    class="w-64 h-10 bg-[#194BF0] rounded-lg pt-1 pb-1 pr-4 pl-4 text-white text-sm font-semibold">
+                                    درخواست رزرو
+                                </button>
+                            </div>
+                        </div>
+                        <div
+                            class="w-72 h-127.5 bg-white rounded-2xl p-4 flex flex-col items-center gap-y-3 border border-[#D7D7D7]">
+                            <div class="w-64 h-48">
+                                <img src="/imags/benze50.jpg" alt="" class="object-contain" />
+                            </div>
+                            <div class="w-64 h-13">
+                                <p class="font-Estedad text-sm font-bold text-[#0C0C0C]">
+                                    اجاره بنز E350 کروک 2013
+                                </p>
+                                <span class="font-Estedad font-normal text-xs text-[#868686]">مدل:2016</span>
+                            </div>
+                            <div class="w-64 h-11 bg-[#F3F3F3] rounded-lg p-2 flex justify-between items-center">
+                                <div class="w-60 h-6 flex items-center">
+                                    <span class="font-Estedad text-xs font-normal">از ۱ تا 30 روز:</span>
+                                    <span class="font-Estedad font-bold text-sm text-[#194BF0]">8,500,000</span>
+                                </div>
+                                <div class="w-6.75 h-5.5 flex justify-center items-center">
+                                    <span class="font-Estedad font-normal text-xs">روزانه</span>
+                                </div>
+                            </div>
+                            <div class="w-64 h-11 bg-[#F3F3F3] rounded-lg p-2 flex justify-between items-center">
+                                <div class="w-60 h-6 flex items-center">
+                                    <span class="font-Estedad text-xs font-normal">از ۱ تا 30 روز:</span>
+                                    <span class="font-Estedad font-bold text-sm text-[#194BF0]">8,500,000</span>
+                                </div>
+                                <div class="w-6.75 h-5.5 flex justify-center items-center">
+                                    <span class="font-Estedad font-normal text-xs">ماهانه</span>
+                                </div>
+                            </div>
+                            <div class="w-full h-px bg-gray-300"></div>
+                            <div class="w-64 h-5.25 flex justify-between items-center">
+                                <span class="font-Estedad text-xs font-medium text-[#212121]">مبلغ ضمانت:</span>
+                                <span class="font-Estedad text-xs font-bold text-[#212121]">80 میلیون تومان</span>
+                            </div>
+                            <div>
+                                <button type="button"
+                                    class="w-64 h-10 bg-[#194BF0] rounded-lg pt-1 pb-1 pr-4 pl-4 text-white text-sm font-semibold">
+                                    درخواست رزرو
+                                </button>
+                            </div>
+                        </div>
+                        <div
+                            class="w-72 h-127.5 bg-white rounded-2xl p-4 flex flex-col items-center gap-y-3 border border-[#D7D7D7]">
+                            <div class="w-64 h-48">
+                                <img src="/imags/benzcu.jpg" alt="" class="object-contain" />
+                            </div>
+                            <div class="w-64 h-13">
+                                <p class="font-Estedad text-sm font-bold text-[#0C0C0C]">
+                                    اجاره بنز cls
+                                </p>
+                                <span class="font-Estedad font-normal text-xs text-[#868686]">مدل:2016</span>
+                            </div>
+                            <div class="w-64 h-11 bg-[#F3F3F3] rounded-lg p-2 flex justify-between items-center">
+                                <div class="w-60 h-6 flex items-center">
+                                    <span class="font-Estedad text-xs font-normal">از ۱ تا 30 روز:</span>
+                                    <span class="font-Estedad font-bold text-sm text-[#194BF0]">8,500,000</span>
+                                </div>
+                                <div class="w-6.75 h-5.5 flex justify-center items-center">
+                                    <span class="font-Estedad font-normal text-xs">روزانه</span>
+                                </div>
+                            </div>
+                            <div class="w-64 h-11 bg-[#F3F3F3] rounded-lg p-2 flex justify-between items-center">
+                                <div class="w-60 h-6 flex items-center">
+                                    <span class="font-Estedad text-xs font-normal">از ۱ تا 30 روز:</span>
+                                    <span class="font-Estedad font-bold text-sm text-[#194BF0]">8,500,000</span>
+                                </div>
+                                <div class="w-6.75 h-5.5 flex justify-center items-center">
+                                    <span class="font-Estedad font-normal text-xs">ماهانه</span>
+                                </div>
+                            </div>
+                            <div class="w-full h-px bg-gray-300"></div>
+                            <div class="w-64 h-5.25 flex justify-between items-center">
+                                <span class="font-Estedad text-xs font-medium text-[#212121]">مبلغ ضمانت:</span>
+                                <span class="font-Estedad text-xs font-bold text-[#212121]">80 میلیون تومان</span>
+                            </div>
+                            <div>
+                                <button type="button"
+                                    class="w-64 h-10 bg-[#194BF0] rounded-lg pt-1 pb-1 pr-4 pl-4 text-white text-sm font-semibold">
+                                    درخواست رزرو
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <!-- main end -->
+
+
+
     <script src="https://cdn.jsdelivr.net/npm/flowbite@4.0.1/dist/flowbite.min.js"></script>
 
     <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
