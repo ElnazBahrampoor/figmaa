@@ -13,6 +13,126 @@
 </head>
 
 <body class=" bg-[#F3F3F3]">
+    <!-- heaer start -->
+    <header class="overflow-hidden">
+        <!-- div coly -->
+        <div x-data="{ open: false }" class="w-full h-171 bg-hero bg-[url(/imags/heroBaner.png)] relative ">
+            <div class="w-full h-171 bg-[#000000B8]/75"></div>
+            <!-- hero baner -->
+            <div
+                class="w-96 md:w-full lg:w-306 lg:h-24 bg-white fixed top-0 left-0 rounded-bl-2xl lg:left-15 rounded-br-2xl flex justify-between items-center pl-8 pr-8 z-250">
+                <!-- logo img -->
+                <div class="w-38 h-15">
+                    <img src="/imags/logoBaner.svg" alt="" class="w-full h-full" />
+                </div>
+                <!-- logo img end -->
+                <!-- navbar  -->
+                <nav class="w-126.75 h-7 hidden md:flex items-center justify-around">
+                    <a href="#" class="font-Estedad text-[#353535] font-medium text-base hover:text-gray-500">رزرو
+                        خودرو</a>
+                    <a href="#" class="font-Estedad text-[#353535] font-medium text-base hover:text-gray-500">خدمات
+                        ما</a>
+                    <a href="#" class="font-Estedad text-[#353535] font-medium text-base hover:text-gray-500">بلاگ</a>
+                    <a href="#" class="font-Estedad text-[#353535] font-medium text-base hover:text-gray-500">درباره
+                        ما</a>
+                    <a href="#" class="font-Estedad text-[#353535] font-medium text-base hover:text-gray-500">تماس با
+                        ما</a>
+                    <a href="#"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                            stroke-width="1.5" stroke="currentColor" class="size-6 hover:text-gray-500">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z" />
+                        </svg>
+                    </a>
+                </nav>
+
+                <!-- navbar end -->
+                <!-- btn -->
+                <div class="hidden md:block" x-data="{ oprn: false}">
+                    <button type="button"
+                        class="w-30.5 h-10 bg-[#194BF0] pt-1 pb-1 pr-4 pl-4 rounded-lg text-white text-base font-Estedad">
+                        ورود / ثبت‌نام
+                    </button>
+                </div>
+                <!-- hambergur menu strt -->
+                <div class="block md:hidden">
+                    <button @click="open = ! open">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                            stroke="currentColor" class="size-6">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M3.75 5.25h16.5m-16.5 4.5h16.5m-16.5 4.5h16.5m-16.5 4.5h16.5" />
+                        </svg>
+                    </button>
+                </div>
+                <br /><br /><br /><br />
+
+                <!-- end btn -->
+                <!-- mobile navigation -->
+                <div x-show="open"
+                    class="bg-white border-t border-gray-100 py-4 px-3 absolute top-24 right-1 w-93 md:hidden">
+                    <a href="#" class="font-Estedad text-[#353535] font-medium text-base hover:text-gray-500 block">رزرو
+                        خودرو</a>
+                    <a href="#"
+                        class="font-Estedad text-[#353535] font-medium text-base hover:text-gray-500 block">خدمات ما</a>
+
+                    <a href="#"
+                        class="font-Estedad text-[#353535] font-medium text-base hover:text-gray-500 block">بلاگ</a>
+                    <a href="#"
+                        class="font-Estedad text-[#353535] font-medium text-base hover:text-gray-500 block">درباره
+                        ما</a>
+                    <a href="#" class="font-Estedad text-[#353535] font-medium text-base hover:text-gray-500 block">تماس
+                        با ما</a>
+                    <a href="#"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                            stroke-width="1.5" stroke="currentColor" class="size-6 hover:text-gray-500 block">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z" />
+                        </svg>
+                    </a>
+                    <button type="button"
+                        class="w-full h-10 bg-[#194BF0] pt-1 pb-1 pr-4 pl-4 rounded-lg text-white text-base font-Estedad">
+                        ورود / ثبت‌نام
+                    </button>
+                </div>
+            </div>
+
+            <!-- hero maner end -->
+            <!-- desc start -->
+
+            <div class="w-360 h-144.75 absolute top-24 lg:right-18 p-2">
+                <div class="w-300 h-120 relative">
+                    <div class="w-83.75 h-31 flex items-center absolute top-20 lg:right-20">
+                        <h1 class="font-Estedad font-bold text-4xl text-secondary-text">
+                            اُتـــو رِنت؛ سریع،<br />
+                            آسان و به صرفه
+                        </h1>
+                    </div>
+                    <div class="w-120 h-9 absolute top-55 lg:right-8">
+                        <p class="font-Estedad text-[#F9F9F9] lg:text-xl font-normal">
+                            سرویس دهنده رزرو خودرو در ایران در کمترین زمان ممکن!
+                        </p>
+                    </div>
+                    <div class="w-200 h-15 absolute top-70 lg:right-8 flex gap-2">
+                        <button type="button"
+                            class="w-46.5 h-12 bg-[#FDB713] rounded-lg pt-0.5 pb-0.5 pr-6 pl-6 flex justify-center items-center gap-1 font-Estedad">
+                            <img src="/imags/buttnCar.svg" alt="" />
+                            رزرو آسان خودرو
+                        </button>
+                        <button type="button"
+                            class="w-37.75 h-12 pt-2 pb-2 pr-6 pl-6 border border-white rounded-lg flex justify-center items-center font-Estedad text-white text-base gap-1">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                                stroke="currentColor" class="size-6 text-white">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="m11.25 9-3 3m0 0 3 3m-3-3h7.5M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+                            </svg>
+                            تماس با ما
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class="w-full h-120 md:h-22"></div>
+    <!-- header end -->
+
     <script src="https://cdn.jsdelivr.net/npm/flowbite@4.0.1/dist/flowbite.min.js"></script>
 
     <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
