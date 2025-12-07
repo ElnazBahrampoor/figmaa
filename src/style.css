@@ -24,6 +24,55 @@
   .bg-hero {
     @apply bg-no-repeat bg-center bg-cover;
   }
+
+   .swiper {
+    @apply w-full h-full;
+    .swiper-slide {
+      @apply flex justify-center items-center;
+      img {
+        @apply block w-full h-full object-cover;
+      }
+    }
+  }
+  .swiper {
+    @apply w-full h-75 ml-auto mr-auto
+  
+  
+  }
+
+  .swiper-slide {
+    background-size: cover;
+    background-position: center;
+  }
+
+  .mySwiper2 {
+    height: 80%;
+    width: 100%;
+  }
+
+  .mySwiper {
+    height: 20%;
+    box-sizing: border-box;
+    padding: 10px 0;
+  }
+
+  .mySwiper .swiper-slide {
+    width: 25%;
+    height: 100%;
+    
+  }
+
+ 
+
+  .swiper-slide img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+   
+
+   
 }
 
    
