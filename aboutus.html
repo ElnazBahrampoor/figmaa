@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css"
+    />
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"
+    ></script>
+    <link rel="stylesheet" href="./src/style.css " />
+    <link rel="shortcut icon" href="./logo/default.svg" type="image/x-icon" />
+    <title>AutoRent.com</title>
+  </head>
+  <body class="bg-[#F3F3F3] h-1000">
+    <!-- header stat -->
+    <header class="overflow-hidden">
+      <div class="w-full h-100 bg-hero bg-[url(/imags/heroPic.jpg)] relative">
+        <div
+          class="w-full h-100 bg-[#00000099]/60 flex justify-center items-center"
+        >
+          <div
+            class="w-90 h-27.5 flex flex-col justify-center items-center gap-y-4"
+          >
+            <h1 class="font-Estedad font-bold text-3xl text-secondary-text">
+              درباره ما
+            </h1>
+            <nav class="flex" aria-label="Breadcrumb">
+              <ol
+                class="inline-flex items-center space-x-1 md:space-x-2 text-white rtl:space-x-reverse"
+              >
+                <li class="inline-flex items-center">
+                  <a
+                    href="#"
+                    class="inline-flex items-center text-sm text-white font-medium hover:text-blue-600 dark:text-gray-400 dark:hover:text-white"
+                  >
+                    اتورنت
+                  </a>
+                </li>
+                <li>
+                  <div class="flex items-center">
+                    <svg
+                      class="rtl:rotate-180 w-3 h-3 text-gray-400 mx-1"
+                      aria-hidden="true"
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 6 10"
+                    >
+                      <path
+                        stroke="currentColor"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="m1 9 4-4-4-4"
+                      />
+                    </svg>
+                    <a
+                      href="#"
+                      class="ms-1 text-sm font-medium text-white hover:text-blue-600 md:ms-2 dark:text-gray-400 dark:hover:text-white"
+                      >لیست خودروهای اجاره ای</a
+                    >
+                  </div>
+                </li>
+              </ol>
+            </nav>
+          </div>
+          <div
+            x-data="{ open: false }"
+            class="w-96 md:w-full lg:w-306 lg:h-24 bg-white fixed top-0 rounded-bl-2xl rounded-br-2xl flex justify-between items-center pl-8 pr-8"
+          >
+            <div class="w-38 h-15">
+              <img src="/imags/logoBaner.svg" alt="" class="w-full h-full" />
+            </div>
+
+            <nav
+              class="w-126.75 h-7 hidden md:flex items-center justify-around"
+            >
+              <a
+                href="#"
+                class="font-Estedad text-[#353535] font-medium text-base hover:text-gray-500"
+                >رزرو خودرو</a
+              >
+              <a
+                href="#"
+                class="font-Estedad text-[#353535] font-medium text-base hover:text-gray-500"
+                >خدمات ما</a
+              >
+              <a
+                href="#"
+                class="font-Estedad text-[#353535] font-medium text-base hover:text-gray-500"
+                >بلاگ</a
+              >
+              <a
+                href="#"
+                class="font-Estedad text-[#353535] font-medium text-base hover:text-gray-500"
+                >درباره ما</a
+              >
+              <a
+                href="#"
+                class="font-Estedad text-[#353535] font-medium text-base hover:text-gray-500"
+                >تماس با ما</a
+              >
+              <a href="#"
+                ><svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                  class="size-6 hover:text-gray-500"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z"
+                  />
+                </svg>
+              </a>
+            </nav>
+            <div class="hidden md:block" x-data="{ open: false}">
+              <button
+                type="button"
+                class="w-30.5 h-10 bg-[#194BF0] pt-1 pb-1 pr-4 pl-4 rounded-lg text-white text-base font-Estedad"
+              >
+                ورود / ثبت‌نام
+              </button>
+            </div>
+            <div class="block md:hidden">
+              <button @click="open = ! open">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                  class="size-6"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M3.75 5.25h16.5m-16.5 4.5h16.5m-16.5 4.5h16.5m-16.5 4.5h16.5"
+                  />
+                </svg>
+              </button>
+            </div>
+            <div
+              x-show="open"
+              class="bg-white border-t border-gray-100 py-4 px-3 absolute top-14.5 right-1 w-93 md:hidden"
+            >
+              <a
+                href="#"
+                class="font-Estedad text-[#353535] font-medium text-base hover:text-gray-500 block"
+                >رزرو خودرو</a
+              >
+              <a
+                href="#"
+                class="font-Estedad text-[#353535] font-medium text-base hover:text-gray-500 block"
+                >خدمات ما</a
+              >
+
+              <a
+                href="#"
+                class="font-Estedad text-[#353535] font-medium text-base hover:text-gray-500 block"
+                >بلاگ</a
+              >
+              <a
+                href="#"
+                class="font-Estedad text-[#353535] font-medium text-base hover:text-gray-500 block"
+                >درباره ما</a
+              >
+              <a
+                href="#"
+                class="font-Estedad text-[#353535] font-medium text-base hover:text-gray-500 block"
+                >تماس با ما</a
+              >
+              <a href="#"
+                ><svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                  class="size-6 hover:text-gray-500 block"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z"
+                  />
+                </svg>
+              </a>
+              <button
+                type="button"
+                class="w-full h-10 bg-[#194BF0] pt-1 pb-1 pr-4 pl-4 rounded-lg text-white text-base font-Estedad"
+              >
+                ورود / ثبت‌نام
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+    <!-- header end -->
+
+    <!-- main strt -->
+    <main class="mt-14">
+      <section class="mb-6">
+        <div
+          class="w-93 md:w-305 h-52 m-auto bg-white rounded-2xl p-3 border space-y-3"
+        >
+          <div class="w-93 md:w-293 h-12">
+            <div class="w-90 md:w-164 h-12 space-y-3">
+              <p class="font-Estedad font-black text-2xl text-[#353535]">
+                معرفی اتورنت
+              </p>
+              <div
+                class="w-full md:w-300 h-1 mx-auto bg-[#D7D7D7] rounded-full overflow-hidden"
+              >
+                <div class="w-10 h-full bg-amber-400"></div>
+              </div>
+            </div>
+          </div>
+          <div class="w-93 md:w-293 h-30 md:h-25">
+            <p
+              class="font-Estedad font-normal text-[8px] md:text-sm text-[#353535]"
+            >
+              اتورنت با رویکرد اعتماد به مشتری، در ابتدا با ایجاد بزرگترین
+              ناوگان خودرویی متشکل از انواع خودروهای صفر کیلومتر، اقتصادی تا
+              تجاری در سراسر کشور ایران و در تمامی شهرهای اصلی کشور و تمامی
+              فرودگاه های اصلی و با هدف ارتقاء واقعی خدمات خوب و خدماتی
+              همانندکشورهای پیــــشرفته در مــیهن عزیزمان ایران سرمایه‌گذاری
+              نموده و این مهم با جلب همکاری سایر شرکای تجاری و جذب سرمایه تا
+              رسیدن به هدف ایجاد‌ شبکه ای بالغ بر صد هزار خودرو و گسترش شبکه به
+              کلیه شهرستانهای کوچک ایران ادامه خواهد یافت.مدل تـجاری اتورنت ، با
+              محوریت اعـتماد به مشتری، امـکان اجاره خودرو با استانداردهای روز
+              دنیا و بدون دریافت تضامین سنتی همانند چک و سفته و اسناد ملکی را
+              فراهم می سازد.
+            </p>
+          </div>
+        </div>
+      </section>
+      <!-- two -->
+      <section class="">
+        <div class="w-93 md:w-305.5 h-150 md:h-46.5 border m-auto">
+          <div
+            class="w-93 md:w-300 md:h-46 h-150 flex flex-col items-center gap-2.5 md:flex md:flex-row md:justify-around md:items-center"
+          >
+            <div
+              class="w-78 h-46.5 pt-4 pb-4 pr-6 pl-6 border border-[#D7D7D7]"
+            >
+              <div class="w-66 h-38.5 flex flex-col gap-y-2 items-center">
+                <div
+                  class="size-18 rounded-xl flex justify-center items-center p-3 border border-[#08237D]"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke-width="1.5"
+                    stroke="currentColor"
+                    class="size-6 text-[#08237d]"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M2.25 13.5h3.86a2.25 2.25 0 0 1 2.012 1.244l.256.512a2.25 2.25 0 0 0 2.013 1.244h3.218a2.25 2.25 0 0 0 2.013-1.244l.256-.512a2.25 2.25 0 0 1 2.013-1.244h3.859m-19.5.338V18a2.25 2.25 0 0 0 2.25 2.25h15A2.25 2.25 0 0 0 21.75 18v-4.162c0-.224-.034-.447-.1-.661L19.24 5.338a2.25 2.25 0 0 0-2.15-1.588H6.911a2.25 2.25 0 0 0-2.15 1.588L2.35 13.177a2.25 2.25 0 0 0-.1.661Z"
+                    />
+                  </svg>
+                </div>
+                <div
+                  class="w-25 h-5.5 font-Estedad text-base font-bold text-[#414141]"
+                >
+                  تحویل در محل
+                </div>
+                <div class="w-66 h-11 font-normal text-xs text-[#757575]">
+                  تحویل خودرو در زمان و مکان تعیین شده توسط شما خواهد بود.
+                </div>
+              </div>
+            </div>
+            <div
+              class="w-78 h-46.5 pt-4 pb-4 pr-6 pl-6 border border-[#D7D7D7]"
+            >
+              <div class="w-66 h-38.5 flex flex-col gap-y-2 items-center">
+                <div
+                  class="size-18 rounded-xl flex justify-center items-center p-3 border border-[#08237D]"
+                >
+                  <img src="/imags/24-support.svg" alt="" />
+                </div>
+                <div
+                  class="w-30 h-7 font-Estedad text-sm font-bold text-[#414141]"
+                >
+                  پشتیبانی 24 ساعته
+                </div>
+                <div
+                  class="w-66 h-11 font-Estedad text-xs text-[#757575] font-normal"
+                >
+                  کارشناسان ما در هر زمان و مکان، پاسخگوی سوالات شما خواهند بود.
+                </div>
+              </div>
+            </div>
+            <div
+              class="w-78 h-46.5 pt-4 pb-4 pr-6 pl-6 border border-[#D7D7D7]"
+            >
+              <div class="w-66 h-38.5 flex flex-col gap-y-2 items-center">
+                <div
+                  class="size-18 rounded-xl flex justify-center items-center p-3 border border-[#08237D]"
+                >
+                  <img
+                    src="/imags/wallet-minus.svg"
+                    alt=""
+                    class="w-10 h-10 object-contain"
+                  />
+                </div>
+                <div
+                  class="w-25 h-5.5 font-Estedad text-base font-bold text-[#414141]"
+                >
+                  قیمت مناسب
+                </div>
+                <div
+                  class="w-66 h-11 font-Estedad text-xs text-[#757575] font-normal"
+                >
+                  هدف ما، ارائه بهترین خدمات با مناسب ترین قیمت ممکن است.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- teo end -->
+
+      <!-- threee -->
+
+      <section class="mt-8">
+        <div
+          class="w-93 md:w-305 h-64.5 m-auto bg-white rounded-2xl p-3 border space-y-3"
+        >
+          <div class="w-93 md:w-293 h-12">
+            <div class="w-90 md:w-164 h-12 space-y-3">
+              <p class="font-Estedad font-bold text-xl text-[#353535]">
+                شبکه نمایندگان و شرکتهای اجاره خودروی همکار
+              </p>
+              <div
+                class="w-full md:w-300 h-1 mx-auto bg-[#D7D7D7] rounded-full overflow-hidden"
+              >
+                <div class="w-10 h-full bg-amber-400"></div>
+              </div>
+            </div>
+          </div>
+          <div class="w-93 md:w-293 h-30 md:h-25">
+            <p
+              class="font-Estedad font-normal text-[8px] md:text-sm text-[#353535]"
+            >
+              اتورنت دارای شبکه ای شامل ایستگاه های داخل شهری و فرودگاهی می باشد
+              که این ایستگاه ها توسط نمایندگان و شرکای تجاری نگهداری و مدیریت
+              می‌گردند، افرادی که علاقمند به سرمایه‌گذاری و همکاری با ناواران
+              می‌باشند می‌توانند بصورت نمایندگی یا همکار تجاری فعالیت نمایند ،
+              در هر صورت این اشخاص می بایست دوره های آموزش را طبق استاندارد
+              بین‌المللی گذرانده و تحت استاندارد و کیفیت مورد نیاز ناواران شروع
+              به فعالیت نمایند.دارا بودن سرمایه مورد نیاز جهت خرید حداقل تعداد
+              خودروهای صفر کیلومتر در محدوده تحت پوشش و قبل از هرچیز اهمیت به
+              اصل خدمت به هموطنان و رضایت مشتریان از شرایط اصلی اعطای نمایندگی
+              می بانمایندگان دارای اپلیکیشن موبایل و سیستم آنلاین مرتبط با
+              سامانه مدیریت مرکزی می باشند، و تمامی امور رزرو و محاسبات مرتبط
+              بصورت خودکار انجام پذیرفته و نمایندگان از پشتیبانی کامل شرکت مرکزی
+              در تمامی مراحل برخوردار خواهند بود.
+            </p>
+          </div>
+        </div>
+      </section>
+      <!-- treee end -->
+
+      <!-- foure -->
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/flowbite@4.0.1/dist/flowbite.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
+    <script src="./src/main.js"></script>
+  </body>
+</html>
