@@ -1,0 +1,1020 @@
+<!DOCTYPE html>
+<html lang="en" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css"
+    />
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"
+    ></script>
+    <link rel="stylesheet" href="./src/style.css " />
+    <link rel="shortcut icon" href="./logo/default.svg" type="image/x-icon" />
+    <title>AutoRent.com</title>
+  </head>
+  <body class="bg-[#F3F3F3]">
+    <!-- header stat -->
+    <header class="overflow-hidden">
+      <div
+        class="w-full h-100 border bg-hero bg-[url(/imags/heroPic.jpg)] relative"
+      >
+        <div
+          class="w-full h-100 bg-[#00000099]/60 flex justify-center items-center"
+        >
+          <div
+            class="w-90 h-27.5 flex flex-col justify-center items-center gap-y-4"
+          >
+            <h1 class="font-Estedad font-bold text-3xl text-secondary-text">
+              مقالات
+            </h1>
+            <nav class="flex" aria-label="Breadcrumb">
+              <ol
+                class="inline-flex items-center space-x-1 md:space-x-2 text-white rtl:space-x-reverse"
+              >
+                <li class="inline-flex items-center">
+                  <a
+                    href="#"
+                    class="inline-flex items-center text-sm text-white font-medium hover:text-blue-600 dark:text-gray-400 dark:hover:text-white"
+                  >
+                    اتورنت
+                  </a>
+                </li>
+                <li>
+                  <div class="flex items-center">
+                    <svg
+                      class="rtl:rotate-180 w-3 h-3 text-gray-400 mx-1"
+                      aria-hidden="true"
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 6 10"
+                    >
+                      <path
+                        stroke="currentColor"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="m1 9 4-4-4-4"
+                      />
+                    </svg>
+                    <a
+                      href="#"
+                      class="ms-1 text-sm font-medium text-white hover:text-blue-600 md:ms-2 dark:text-gray-400 dark:hover:text-white"
+                      >لیست خودروهای اجاره ای</a
+                    >
+                  </div>
+                </li>
+              </ol>
+            </nav>
+          </div>
+          <div
+            x-data="{ open: false }"
+            class="w-96 md:w-full lg:w-306 lg:h-24 bg-white fixed top-0 rounded-bl-2xl rounded-br-2xl flex justify-between items-center pl-8 pr-8"
+          >
+            <div class="w-38 h-15">
+              <img src="/imags/logoBaner.svg" alt="" class="w-full h-full" />
+            </div>
+
+            <nav
+              class="w-126.75 h-7 hidden md:flex items-center justify-around"
+            >
+              <a
+                href="#"
+                class="font-Estedad text-[#353535] font-medium text-base hover:text-gray-500"
+                >رزرو خودرو</a
+              >
+              <a
+                href="#"
+                class="font-Estedad text-[#353535] font-medium text-base hover:text-gray-500"
+                >خدمات ما</a
+              >
+              <a
+                href="#"
+                class="font-Estedad text-[#353535] font-medium text-base hover:text-gray-500"
+                >بلاگ</a
+              >
+              <a
+                href="#"
+                class="font-Estedad text-[#353535] font-medium text-base hover:text-gray-500"
+                >درباره ما</a
+              >
+              <a
+                href="#"
+                class="font-Estedad text-[#353535] font-medium text-base hover:text-gray-500"
+                >تماس با ما</a
+              >
+              <a href="#"
+                ><svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                  class="size-6 hover:text-gray-500"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z"
+                  />
+                </svg>
+              </a>
+            </nav>
+            <div class="hidden md:block" x-data="{ open: false}">
+              <button
+                type="button"
+                class="w-30.5 h-10 bg-[#194BF0] pt-1 pb-1 pr-4 pl-4 rounded-lg text-white text-base font-Estedad"
+              >
+                ورود / ثبت‌نام
+              </button>
+            </div>
+            <div class="block md:hidden">
+              <button @click="open = ! open">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                  class="size-6"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M3.75 5.25h16.5m-16.5 4.5h16.5m-16.5 4.5h16.5m-16.5 4.5h16.5"
+                  />
+                </svg>
+              </button>
+            </div>
+            <div
+              x-show="open"
+              class="bg-white border-t border-gray-100 py-4 px-3 absolute top-14.5 right-1 w-93 md:hidden"
+            >
+              <a
+                href="#"
+                class="font-Estedad text-[#353535] font-medium text-base hover:text-gray-500 block"
+                >رزرو خودرو</a
+              >
+              <a
+                href="#"
+                class="font-Estedad text-[#353535] font-medium text-base hover:text-gray-500 block"
+                >خدمات ما</a
+              >
+
+              <a
+                href="#"
+                class="font-Estedad text-[#353535] font-medium text-base hover:text-gray-500 block"
+                >بلاگ</a
+              >
+              <a
+                href="#"
+                class="font-Estedad text-[#353535] font-medium text-base hover:text-gray-500 block"
+                >درباره ما</a
+              >
+              <a
+                href="#"
+                class="font-Estedad text-[#353535] font-medium text-base hover:text-gray-500 block"
+                >تماس با ما</a
+              >
+              <a href="#"
+                ><svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                  class="size-6 hover:text-gray-500 block"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z"
+                  />
+                </svg>
+              </a>
+              <button
+                type="button"
+                class="w-full h-10 bg-[#194BF0] pt-1 pb-1 pr-4 pl-4 rounded-lg text-white text-base font-Estedad"
+              >
+                ورود / ثبت‌نام
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+    <!-- header end -->
+
+    <main class="mt-14">
+      <section>
+        <div class="w-310 flex gap-x-7 bg-amber-200 h-431 border m-auto">
+          <div class="w-202 h-290">
+            <!-- ccc -->
+            <div
+              class="w-93 md:w-201.75 h-280 md:h-92.5 flex flex-col items-center gap-y-2 md:flex-row md:justify-between md:items-center"
+            >
+              <div class="w-97.75 h-92.5 bg-white rounded-2xl p-4">
+                <div class="w-89.75 h-92.5 flex flex-col items-center gap-y-4">
+                  <div class="w-89.75 h-55 overflow-hidden">
+                    <img
+                      src="/imags/blog1.jpg"
+                      alt=""
+                      class="rounded-xl object-contain"
+                    />
+                  </div>
+                  <div class="w-89.75 h-31.75 space-y-4.5">
+                    <h4 class="font-Estedad font-medium text-sm text-[#414141]">
+                      روش های مختلف برای اجاره خودرو
+                    </h4>
+                    <p class="font-Estedad font-normal text-xs text-[#757575]">
+                       امروزه با تغییراتی که در سبک زندگی مردم و شرایط اقتصادی
+                      جوامع به وجود آمده است نیازهای افراد و نحوه دسترسی به آنها
+                      نیز دچار تحولاتی شده است.
+                    </p>
+                    <div class="w-87.75 h-6.35 flex gap-x-2">
+                      <div class="w-17.5 h-6.25 flex items-center gap-x-1">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          fill="none"
+                          viewBox="0 0 24 24"
+                          stroke-width="1.5"
+                          stroke="currentColor"
+                          class="size-4 text-[#757575]"
+                        >
+                          <path
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
+                          />
+                        </svg>
+                        <span
+                          class="font-Estedad font-normal text-sm text-[#757575]"
+                          >3دقیقه</span
+                        >
+                      </div>
+                      <div class="w-17.5 h-6.25 flex items-center gap-x-1">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          fill="none"
+                          viewBox="0 0 24 24"
+                          stroke-width="1.5"
+                          stroke="currentColor"
+                          class="size-4 text-[#757575]"
+                        >
+                          <path
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            d="M2.036 12.322a1.012 1.012 0 0 1 0-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.431 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178Z"
+                          />
+                          <path
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            d="M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"
+                          />
+                        </svg>
+
+                        <span
+                          class="font-Estedad font-normal text-sm text-[#757575]"
+                          >1,213</span
+                        >
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="w-97.75 h-92.5 bg-white rounded-2xl p-4">
+                <div class="w-89.75 h-84.5 flex flex-col items-center gap-y-4">
+                  <div class="w-89.75 h-48.75 overflow-hidden">
+                    <img src="/imags/blog2.jpg" alt="" class="rounded-xl" />
+                  </div>
+                  <div class="w-89.75 h-31.75 space-y-4.5">
+                    <h4 class="font-Estedad font-medium text-sm text-[#414141]">
+                      روش های مختلف برای اجاره خودرو
+                    </h4>
+                    <p class="font-Estedad font-normal text-xs text-[#757575]">
+                       امروزه با تغییراتی که در سبک زندگی مردم و شرایط اقتصادی
+                      جوامع به وجود آمده است نیازهای افراد و نحوه دسترسی به آنها
+                      نیز دچار تحولاتی شده است.
+                    </p>
+                    <div class="w-87.75 h-6.35 flex gap-x-2">
+                      <div class="w-17.5 h-6.25 flex items-center gap-x-1">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          fill="none"
+                          viewBox="0 0 24 24"
+                          stroke-width="1.5"
+                          stroke="currentColor"
+                          class="size-4 text-[#757575]"
+                        >
+                          <path
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
+                          />
+                        </svg>
+                        <span
+                          class="font-Estedad font-normal text-sm text-[#757575]"
+                          >3دقیقه</span
+                        >
+                      </div>
+                      <div class="w-17.5 h-6.25 flex items-center gap-x-1">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          fill="none"
+                          viewBox="0 0 24 24"
+                          stroke-width="1.5"
+                          stroke="currentColor"
+                          class="size-4 text-[#757575]"
+                        >
+                          <path
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            d="M2.036 12.322a1.012 1.012 0 0 1 0-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.431 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178Z"
+                          />
+                          <path
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            d="M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"
+                          />
+                        </svg>
+
+                        <span
+                          class="font-Estedad font-normal text-sm text-[#757575]"
+                          >1,213</span
+                        >
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- ccc -->
+
+            <!-- ee -->
+            <div
+              class="w-93 mt-6 mb-6 md:w-201.75 h-280 md:h-92.5 flex flex-col items-center gap-y-2 md:flex-row md:justify-between md:items-center"
+            >
+              <div class="w-97.75 h-92.5 bg-white rounded-2xl p-4">
+                <div class="w-89.75 h-92.5 flex flex-col items-center gap-y-4">
+                  <div class="w-89.75 h-48.75 overflow-hidden">
+                    <img
+                      src="/imags/bluelexus.jpg"
+                      alt=""
+                      class="rounded-xl object-contain"
+                    />
+                  </div>
+                  <div class="w-89.75 h-31.75 space-y-4.5">
+                    <h4 class="font-Estedad font-medium text-sm text-[#414141]">
+                      روش های مختلف برای اجاره خودرو
+                    </h4>
+                    <p class="font-Estedad font-normal text-xs text-[#757575]">
+                       امروزه با تغییراتی که در سبک زندگی مردم و شرایط اقتصادی
+                      جوامع به وجود آمده است نیازهای افراد و نحوه دسترسی به آنها
+                      نیز دچار تحولاتی شده است.
+                    </p>
+                    <div class="w-87.75 h-6.35 flex gap-x-2">
+                      <div class="w-17.5 h-6.25 flex items-center gap-x-1">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          fill="none"
+                          viewBox="0 0 24 24"
+                          stroke-width="1.5"
+                          stroke="currentColor"
+                          class="size-4 text-[#757575]"
+                        >
+                          <path
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
+                          />
+                        </svg>
+                        <span
+                          class="font-Estedad font-normal text-sm text-[#757575]"
+                          >3دقیقه</span
+                        >
+                      </div>
+                      <div class="w-17.5 h-6.25 flex items-center gap-x-1">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          fill="none"
+                          viewBox="0 0 24 24"
+                          stroke-width="1.5"
+                          stroke="currentColor"
+                          class="size-4 text-[#757575]"
+                        >
+                          <path
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            d="M2.036 12.322a1.012 1.012 0 0 1 0-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.431 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178Z"
+                          />
+                          <path
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            d="M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"
+                          />
+                        </svg>
+
+                        <span
+                          class="font-Estedad font-normal text-sm text-[#757575]"
+                          >1,213</span
+                        >
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="w-97.75 h-92.5 bg-white rounded-2xl p-4">
+                <div class="w-89.75 h-84.5 flex flex-col items-center gap-y-4">
+                  <div class="w-89.75 h-48.75 overflow-hidden">
+                    <img src="/imags/blog3.jpg" alt="" class="rounded-xl" />
+                  </div>
+                  <div class="w-89.75 h-31.75 space-y-4.5">
+                    <h4 class="font-Estedad font-medium text-sm text-[#414141]">
+                      روش های مختلف برای اجاره خودرو
+                    </h4>
+                    <p class="font-Estedad font-normal text-xs text-[#757575]">
+                       امروزه با تغییراتی که در سبک زندگی مردم و شرایط اقتصادی
+                      جوامع به وجود آمده است نیازهای افراد و نحوه دسترسی به آنها
+                      نیز دچار تحولاتی شده است.
+                    </p>
+                    <div class="w-87.75 h-6.35 flex gap-x-2">
+                      <div class="w-17.5 h-6.25 flex items-center gap-x-1">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          fill="none"
+                          viewBox="0 0 24 24"
+                          stroke-width="1.5"
+                          stroke="currentColor"
+                          class="size-4 text-[#757575]"
+                        >
+                          <path
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
+                          />
+                        </svg>
+                        <span
+                          class="font-Estedad font-normal text-sm text-[#757575]"
+                          >3دقیقه</span
+                        >
+                      </div>
+                      <div class="w-17.5 h-6.25 flex items-center gap-x-1">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          fill="none"
+                          viewBox="0 0 24 24"
+                          stroke-width="1.5"
+                          stroke="currentColor"
+                          class="size-4 text-[#757575]"
+                        >
+                          <path
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            d="M2.036 12.322a1.012 1.012 0 0 1 0-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.431 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178Z"
+                          />
+                          <path
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            d="M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"
+                          />
+                        </svg>
+
+                        <span
+                          class="font-Estedad font-normal text-sm text-[#757575]"
+                          >1,213</span
+                        >
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- ee -->
+
+            <!-- aa -->
+            <div
+              class="w-93 mt-6 mb-6 md:w-201.75 h-280 md:h-92.5 flex flex-col items-center gap-y-2 md:flex-row md:justify-between md:items-center"
+            >
+              <div class="w-97.75 h-92.5 bg-white rounded-2xl p-4">
+                <div class="w-89.75 h-92.5 flex flex-col items-center gap-y-4">
+                  <div class="w-89.75 h-48.75 overflow-hidden">
+                    <img
+                      src="/imags/blog4.jpg"
+                      alt=""
+                      class="rounded-xl object-contain"
+                    />
+                  </div>
+                  <div class="w-89.75 h-31.75 space-y-4.5">
+                    <h4 class="font-Estedad font-medium text-sm text-[#414141]">
+                      روش های مختلف برای اجاره خودرو
+                    </h4>
+                    <p class="font-Estedad font-normal text-xs text-[#757575]">
+                       امروزه با تغییراتی که در سبک زندگی مردم و شرایط اقتصادی
+                      جوامع به وجود آمده است نیازهای افراد و نحوه دسترسی به آنها
+                      نیز دچار تحولاتی شده است.
+                    </p>
+                    <div class="w-87.75 h-6.35 flex gap-x-2">
+                      <div class="w-17.5 h-6.25 flex items-center gap-x-1">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          fill="none"
+                          viewBox="0 0 24 24"
+                          stroke-width="1.5"
+                          stroke="currentColor"
+                          class="size-4 text-[#757575]"
+                        >
+                          <path
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
+                          />
+                        </svg>
+                        <span
+                          class="font-Estedad font-normal text-sm text-[#757575]"
+                          >3دقیقه</span
+                        >
+                      </div>
+                      <div class="w-17.5 h-6.25 flex items-center gap-x-1">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          fill="none"
+                          viewBox="0 0 24 24"
+                          stroke-width="1.5"
+                          stroke="currentColor"
+                          class="size-4 text-[#757575]"
+                        >
+                          <path
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            d="M2.036 12.322a1.012 1.012 0 0 1 0-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.431 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178Z"
+                          />
+                          <path
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            d="M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"
+                          />
+                        </svg>
+
+                        <span
+                          class="font-Estedad font-normal text-sm text-[#757575]"
+                          >1,213</span
+                        >
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="w-97.75 h-92.5 bg-white rounded-2xl p-4">
+                <div class="w-89.75 h-84.5 flex flex-col items-center gap-y-4">
+                  <div class="w-89.75 h-48.75 overflow-hidden">
+                    <img src="/imags/blog5.jpg" alt="" class="rounded-xl" />
+                  </div>
+                  <div class="w-89.75 h-31.75 space-y-4.5">
+                    <h4 class="font-Estedad font-medium text-sm text-[#414141]">
+                      روش های مختلف برای اجاره خودرو
+                    </h4>
+                    <p class="font-Estedad font-normal text-xs text-[#757575]">
+                       امروزه با تغییراتی که در سبک زندگی مردم و شرایط اقتصادی
+                      جوامع به وجود آمده است نیازهای افراد و نحوه دسترسی به آنها
+                      نیز دچار تحولاتی شده است.
+                    </p>
+                    <div class="w-87.75 h-6.35 flex gap-x-2">
+                      <div class="w-17.5 h-6.25 flex items-center gap-x-1">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          fill="none"
+                          viewBox="0 0 24 24"
+                          stroke-width="1.5"
+                          stroke="currentColor"
+                          class="size-4 text-[#757575]"
+                        >
+                          <path
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
+                          />
+                        </svg>
+                        <span
+                          class="font-Estedad font-normal text-sm text-[#757575]"
+                          >3دقیقه</span
+                        >
+                      </div>
+                      <div class="w-17.5 h-6.25 flex items-center gap-x-1">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          fill="none"
+                          viewBox="0 0 24 24"
+                          stroke-width="1.5"
+                          stroke="currentColor"
+                          class="size-4 text-[#757575]"
+                        >
+                          <path
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            d="M2.036 12.322a1.012 1.012 0 0 1 0-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.431 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178Z"
+                          />
+                          <path
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            d="M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"
+                          />
+                        </svg>
+
+                        <span
+                          class="font-Estedad font-normal text-sm text-[#757575]"
+                          >1,213</span
+                        >
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- aa -->
+          </div>
+          <!-- side -->
+          <div class="w-98 h-200 space-y-7">
+            <!-- one -->
+            <div
+              class="w-98 h-14 bg-white flex justify-between items-center rounded-2xl pt-3.5 pb-3.5 pr-4 pl-4"
+            >
+              <div class="44.5 h-6">
+                <input
+                  type="text"
+                  class="font-Estedad font-normal w-44 text-xs text-[#919191]"
+                  value="جستجو در سایت اجاره خودرو اتورنت"
+                />
+              </div>
+              <div class="size-4">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                  class="size-4 text-[#919191]"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z"
+                  />
+                </svg>
+              </div>
+            </div>
+            <!-- one -->
+
+            <!-- two -->
+            <div
+              class="w-98 h-142 bg-white rounded-2xl pr-2 pl-2 flex flex-col items-center"
+            >
+              <div class="w-90 h-16 pt-2 space-y-2">
+                <h3 class="font-Estedad font-bold text-xl text-[#353535]">
+                  آخرین مقالات
+                </h3>
+                <div class="w-15 h-1 bg-[#D79C10] rounded-full"></div>
+              </div>
+              <!-- ee -->
+              <div class="w-93 h-114">
+                <div
+                  class="w-93 h-26.25 border-b border-[#868686] flex items-center gap-x-3 pr-2 pl-2"
+                >
+                  <div class="w-20.5 h-20.75">
+                    <img src="/imags/aside1.jpg" alt="" class="rounded-lg" />
+                  </div>
+                  <div class="w-65 h-16.25 flex flex-col gap-y-2">
+                    <p class="font-Estedad font-medium text-sm text-[#494949]">
+                      نگاهی به Lexus NX
+                    </p>
+                    <div
+                      class="w-38.5 h-6.25 flex justify-between items-center"
+                    >
+                      <div class="w-17 h-6.25 flex gap-x-1 items-center">
+                        <span
+                          ><svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            fill="none"
+                            viewBox="0 0 24 24"
+                            stroke-width="1.5"
+                            stroke="currentColor"
+                            class="size-4 text-[#868686]"
+                          >
+                            <path
+                              stroke-linecap="round"
+                              stroke-linejoin="round"
+                              d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
+                            />
+                          </svg>
+                        </span>
+                        <span
+                          class="font-Estedad font-medium text-xs text-[#868686]"
+                          >3دقیقه</span
+                        >
+                      </div>
+                      <!-- dd -->
+                      <div class="w-17 h-6.25 flex gap-x-1 items-center">
+                        <span>
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            fill="none"
+                            viewBox="0 0 24 24"
+                            stroke-width="1.5"
+                            stroke="currentColor"
+                            class="size-4 text-[#868686]"
+                          >
+                            <path
+                              stroke-linecap="round"
+                              stroke-linejoin="round"
+                              d="M2.036 12.322a1.012 1.012 0 0 1 0-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.431 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178Z"
+                            />
+                            <path
+                              stroke-linecap="round"
+                              stroke-linejoin="round"
+                              d="M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"
+                            />
+                          </svg>
+                        </span>
+
+                        <span
+                          class="font-Estedad font-medium text-xs text-[#868686]"
+                          >۲۱۵۹۷</span
+                        >
+                      </div>
+                      <!--dd  -->
+                    </div>
+                  </div>
+                </div>
+                <!-- zz -->
+                <div
+                  class="w-93 h-26.25 border-b border-[#868686] flex items-center gap-x-3 pr-2 pl-2"
+                >
+                  <div class="w-20.5 h-20.75">
+                    <img
+                      src="/imags/aside2.jpg"
+                      alt=""
+                      class="rounded-lg size-20"
+                    />
+                  </div>
+                  <div class="w-65 h-16.25 flex flex-col gap-y-2">
+                    <p class="font-Estedad font-medium text-sm text-[#494949]">
+                      رونمایی از Lamborgini Urus
+                    </p>
+                    <div
+                      class="w-38.5 h-6.25 flex justify-between items-center"
+                    >
+                      <div class="w-17 h-6.25 flex gap-x-1 items-center">
+                        <span
+                          ><svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            fill="none"
+                            viewBox="0 0 24 24"
+                            stroke-width="1.5"
+                            stroke="currentColor"
+                            class="size-4 text-[#868686]"
+                          >
+                            <path
+                              stroke-linecap="round"
+                              stroke-linejoin="round"
+                              d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
+                            />
+                          </svg>
+                        </span>
+                        <span
+                          class="font-Estedad font-medium text-xs text-[#868686]"
+                          >3دقیقه</span
+                        >
+                      </div>
+                      <!-- dd -->
+                      <div class="w-17 h-6.25 flex gap-x-1 items-center">
+                        <span>
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            fill="none"
+                            viewBox="0 0 24 24"
+                            stroke-width="1.5"
+                            stroke="currentColor"
+                            class="size-4 text-[#868686]"
+                          >
+                            <path
+                              stroke-linecap="round"
+                              stroke-linejoin="round"
+                              d="M2.036 12.322a1.012 1.012 0 0 1 0-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.431 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178Z"
+                            />
+                            <path
+                              stroke-linecap="round"
+                              stroke-linejoin="round"
+                              d="M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"
+                            />
+                          </svg>
+                        </span>
+
+                        <span
+                          class="font-Estedad font-medium text-xs text-[#868686]"
+                          >۲۱۵۹۷</span
+                        >
+                      </div>
+                      <!--dd  -->
+                    </div>
+                  </div>
+                </div>
+                <!-- zz -->
+
+                <!-- yy -->
+                <div
+                  class="w-93 h-26.25 border-b border-[#868686] flex items-center gap-x-3 pr-2 pl-2"
+                >
+                  <div class="w-20.5 h-20.75">
+                    <img
+                      src="/imags/aside3.jpg"
+                      alt=""
+                      class="rounded-lg w-20 h-20.75"
+                    />
+                  </div>
+                  <div class="w-65 h-16.25 flex flex-col gap-y-2">
+                    <p class="font-Estedad font-medium text-sm text-[#494949]">
+                      بنتلی Bentayga زیر تیغ تیونینگ منصوری
+                    </p>
+                    <div
+                      class="w-38.5 h-6.25 flex justify-between items-center"
+                    >
+                      <div class="w-17 h-6.25 flex gap-x-1 items-center">
+                        <span
+                          ><svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            fill="none"
+                            viewBox="0 0 24 24"
+                            stroke-width="1.5"
+                            stroke="currentColor"
+                            class="size-4 text-[#868686]"
+                          >
+                            <path
+                              stroke-linecap="round"
+                              stroke-linejoin="round"
+                              d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
+                            />
+                          </svg>
+                        </span>
+                        <span
+                          class="font-Estedad font-medium text-xs text-[#868686]"
+                          >3دقیقه</span
+                        >
+                      </div>
+                      <!-- dd -->
+                      <div class="w-17 h-6.25 flex gap-x-1 items-center">
+                        <span>
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            fill="none"
+                            viewBox="0 0 24 24"
+                            stroke-width="1.5"
+                            stroke="currentColor"
+                            class="size-4 text-[#868686]"
+                          >
+                            <path
+                              stroke-linecap="round"
+                              stroke-linejoin="round"
+                              d="M2.036 12.322a1.012 1.012 0 0 1 0-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.431 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178Z"
+                            />
+                            <path
+                              stroke-linecap="round"
+                              stroke-linejoin="round"
+                              d="M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"
+                            />
+                          </svg>
+                        </span>
+
+                        <span
+                          class="font-Estedad font-medium text-xs text-[#868686]"
+                          >۲۱۵۹۷</span
+                        >
+                      </div>
+                      <!--dd  -->
+                    </div>
+                  </div>
+                </div>
+                <!-- yy -->
+
+                <!-- xx -->
+                <div
+                  class="w-93 h-26.25 border-b border-[#868686] flex items-center gap-x-3 pr-2 pl-2"
+                >
+                  <div class="w-20.5 h-20.75">
+                    <img src="/imags/asi4.jpg" alt="" class="rounded-lg" />
+                  </div>
+                  <div class="w-65 h-16.25 flex flex-col gap-y-2">
+                    <p class="font-Estedad font-medium text-sm text-[#494949]">
+                      نگاهی به Lexus NX
+                    </p>
+                    <div
+                      class="w-38.5 h-6.25 flex justify-between items-center"
+                    >
+                      <div class="w-17 h-6.25 flex gap-x-1 items-center">
+                        <span
+                          ><svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            fill="none"
+                            viewBox="0 0 24 24"
+                            stroke-width="1.5"
+                            stroke="currentColor"
+                            class="size-4 text-[#868686]"
+                          >
+                            <path
+                              stroke-linecap="round"
+                              stroke-linejoin="round"
+                              d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
+                            />
+                          </svg>
+                        </span>
+                        <span
+                          class="font-Estedad font-medium text-xs text-[#868686]"
+                          >3دقیقه</span
+                        >
+                      </div>
+                      <!-- dd -->
+                      <div class="w-17 h-6.25 flex gap-x-1 items-center">
+                        <span>
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            fill="none"
+                            viewBox="0 0 24 24"
+                            stroke-width="1.5"
+                            stroke="currentColor"
+                            class="size-4 text-[#868686]"
+                          >
+                            <path
+                              stroke-linecap="round"
+                              stroke-linejoin="round"
+                              d="M2.036 12.322a1.012 1.012 0 0 1 0-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.431 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178Z"
+                            />
+                            <path
+                              stroke-linecap="round"
+                              stroke-linejoin="round"
+                              d="M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"
+                            />
+                          </svg>
+                        </span>
+
+                        <span
+                          class="font-Estedad font-medium text-xs text-[#868686]"
+                          >۲۱۵۹۷</span
+                        >
+                      </div>
+                      <!--dd  -->
+                    </div>
+                  </div>
+                </div>
+                <!-- xx -->
+
+                <!--  -->
+              </div>
+              <!-- ee -->
+            </div>
+            <!-- two -->
+            <!-- tree -->
+            <div class="w-98 h-32.5 bg-white pr-2 rounded-2xl">
+              <div class="w-90 h-16 pt-2 space-y-2">
+                <h3 class="font-Estedad font-bold text-xl text-[#353535]">
+                  برچسب‌ها
+                </h3>
+                <div class="w-15 h-1 bg-[#D79C10] rounded-full"></div>
+              </div>
+              <div class="w-95 flex justify-between items-center h-8.75">
+                <button
+                  class="w-21.5 h-8.75 bg-[#F3F3F3] rounded-[48px] pt-2 pb-2 pr-4 pl-4 font-Estedad font-normal text-[10px] text-[#494949]"
+                >
+                  اجاره خودرو
+                </button>
+                <!-- ss -->
+                <button
+                  class="w-21.5 h-8.75 bg-[#F3F3F3] rounded-[48px] pt-2 pb-2 pr-4 pl-4 font-Estedad font-normal text-[10px] text-[#494949]"
+                >
+                  مرسدس بنز
+                </button>
+                <!-- ss -->
+                <button
+                  class="w-11.75 h-8.75 bg-[#F3F3F3] rounded-[48px] pt-2 pb-2 pr-4 pl-4 font-Estedad font-normal text-[10px] text-[#494949]"
+                >
+                  ون
+                </button>
+                <!-- d -->
+                <button
+                  class="w-21.5 h-8.75 bg-[#F3F3F3] rounded-[48px] pt-2 pb-2 pr-4 pl-4 font-Estedad font-normal text-[10px] text-[#494949]"
+                >
+                  بدون راننده
+                </button>
+              </div>
+            </div>
+            <!-- three -->
+          </div>
+          <!-- side -->
+        </div>
+      </section>
+    </main>
+    <script src="https://cdn.jsdelivr.net/npm/flowbite@4.0.1/dist/flowbite.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
+    <script src="./src/main.js"></script>
+  </body>
+</html>
